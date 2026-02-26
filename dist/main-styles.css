@@ -144,7 +144,7 @@
 .frm_style_formidable-style.with_frm_style .frm_submit button:hover:hover,
 .frm_style_formidable-style.with_frm_style .frm_submit button:active:hover, .load-more:hover {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 10%, #4F7098);
+  background-color: color-mix(in oklch, white 12%, #4F7098);
 }
 
 .read-more {
@@ -234,7 +234,6 @@ h6 {
   margin-bottom: 16px;
   color: #000000;
   font-family: serif;
-  font-weight: 100;
 }
 
 h1 {
@@ -1229,6 +1228,167 @@ html.active .menu-toggle:after {
 }
 .one-column-block .primary-button {
   margin: 48px auto 0;
+}
+
+.rooms-block {
+  width: calc(100% - 56px);
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .rooms-block {
+    width: calc(100% - 64px);
+  }
+}
+@media (min-width: 1280px) {
+  .rooms-block {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .rooms-block__rooms {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.rooms-block__room {
+  margin-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .rooms-block__room {
+    width: calc(50% - 32px);
+  }
+}
+.rooms-block__image {
+  height: 560px !important;
+}
+.rooms-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.rooms-block__title {
+  margin-top: 32px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .rooms-block__title {
+    margin-top: 48px;
+  }
+}
+.rooms-block__button {
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .rooms-block__button {
+    margin-top: 48px;
+  }
+}
+.rooms-block .slick-dots {
+  display: flex;
+  margin-top: 8px;
+}
+.rooms-block .slick-dots button {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  border: 2px solid;
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.rooms-block__room.color--canvas .slick-dots button {
+  border-color: #E6C08B;
+}
+
+.rooms-block__room.color--canvas .slick-dots .slick-active button {
+  background-color: #E6C08B;
+}
+
+.rooms-block__room.color--ember .slick-dots button {
+  border-color: #EAAA23;
+}
+
+.rooms-block__room.color--ember .slick-dots .slick-active button {
+  background-color: #EAAA23;
+}
+
+.rooms-block__room.color--clay .slick-dots button {
+  border-color: #B98C78;
+}
+
+.rooms-block__room.color--clay .slick-dots .slick-active button {
+  background-color: #B98C78;
+}
+
+.rooms-block__room.color--sage .slick-dots button {
+  border-color: #CF8732;
+}
+
+.rooms-block__room.color--sage .slick-dots .slick-active button {
+  background-color: #CF8732;
+}
+
+.rooms-block__room.color--harbor .slick-dots button {
+  border-color: #4F7098;
+}
+
+.rooms-block__room.color--harbor .slick-dots .slick-active button {
+  background-color: #4F7098;
+}
+
+.rooms-block__room.color--ink .slick-dots button {
+  border-color: #979CAD;
+}
+
+.rooms-block__room.color--ink .slick-dots .slick-active button {
+  background-color: #979CAD;
+}
+
+.rooms-block__room.color--canvas .rooms-block__button .primary-button {
+  background-color: #E6C08B;
+}
+.rooms-block__room.color--canvas .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #E6C08B);
+}
+
+.rooms-block__room.color--ember .rooms-block__button .primary-button {
+  background-color: #EAAA23;
+}
+.rooms-block__room.color--ember .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #EAAA23);
+}
+
+.rooms-block__room.color--clay .rooms-block__button .primary-button {
+  background-color: #B98C78;
+}
+.rooms-block__room.color--clay .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #B98C78);
+}
+
+.rooms-block__room.color--sage .rooms-block__button .primary-button {
+  background-color: #CF8732;
+}
+.rooms-block__room.color--sage .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #CF8732);
+}
+
+.rooms-block__room.color--harbor .rooms-block__button .primary-button {
+  background-color: #4F7098;
+}
+.rooms-block__room.color--harbor .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #4F7098);
+}
+
+.rooms-block__room.color--ink .rooms-block__button .primary-button {
+  background-color: #979CAD;
+}
+.rooms-block__room.color--ink .rooms-block__button .primary-button:hover {
+  background-color: color-mix(in oklch, white 12%, #979CAD);
 }
 
 .spacer-block--single {

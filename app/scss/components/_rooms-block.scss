@@ -1,0 +1,161 @@
+@use '../base/globals' as *;
+
+.rooms-block {
+  @include container;
+
+  &__rooms {
+    @include respond(small){
+      @include flex-between;
+      flex-wrap: wrap;
+    }
+  }
+
+   &__room {
+    margin-bottom: 64px;
+    
+    @include respond(small){
+     width: calc(50% - 32px);
+    }
+  }
+
+  &__image {
+    height: 560px !important;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+    text-transform: uppercase;
+
+    @include respond(small){
+      margin-top: 48px;
+    }
+  }
+
+  &__button {
+    margin-top: 32px;
+
+    @include respond(small){
+      margin-top: 48px;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    margin-top: 8px;
+
+    button {
+      width: 16px;
+      height: 16px;
+      margin-right: 2px;
+      border: 2px solid;
+      border-radius: 50%;
+      font-size: 0;
+      cursor: pointer;
+    }
+  }
+} 
+
+// Match Slick Dots to Text Color
+.rooms-block__room.color--canvas .slick-dots button {
+  border-color: $canvas;
+}
+
+.rooms-block__room.color--canvas .slick-dots .slick-active button {
+  background-color: $canvas;
+}
+
+.rooms-block__room.color--ember .slick-dots button {
+  border-color: $ember;
+}
+
+.rooms-block__room.color--ember .slick-dots .slick-active button {
+  background-color: $ember;
+}
+
+.rooms-block__room.color--clay .slick-dots button {
+  border-color: $clay;
+}
+
+.rooms-block__room.color--clay .slick-dots .slick-active button {
+  background-color: $clay;
+}
+
+.rooms-block__room.color--sage .slick-dots button {
+  border-color: $sage;
+}
+
+.rooms-block__room.color--sage .slick-dots .slick-active button {
+  background-color: $sage;
+}
+
+.rooms-block__room.color--harbor .slick-dots button {
+  border-color: $harbor;
+}
+
+.rooms-block__room.color--harbor .slick-dots .slick-active button {
+  background-color: $harbor;
+}
+
+.rooms-block__room.color--ink .slick-dots button {
+  border-color: $ink;
+}
+
+.rooms-block__room.color--ink .slick-dots .slick-active button {
+  background-color: $ink;
+}
+
+// Match Primary Button Color to Text and Dots
+.rooms-block__room.color--canvas .rooms-block__button .primary-button {
+  background-color: $canvas;
+
+  &:hover {
+    background-color: tint($canvas, 12%);
+  }
+}
+
+.rooms-block__room.color--ember .rooms-block__button .primary-button {
+  background-color: $ember;
+
+  &:hover {
+    background-color: tint($ember, 12%);
+  }
+}
+
+.rooms-block__room.color--clay .rooms-block__button .primary-button {
+  background-color: $clay;
+
+  &:hover {
+    background-color: tint($clay, 12%);
+  }
+}
+
+.rooms-block__room.color--sage .rooms-block__button .primary-button {
+  background-color: $sage;
+
+  &:hover {
+    background-color: tint($sage, 12%);
+  }
+}
+
+.rooms-block__room.color--harbor .rooms-block__button .primary-button {
+  background-color: $harbor;
+
+  &:hover {
+    background-color: tint($harbor, 12%);
+  }
+}
+
+.rooms-block__room.color--ink .rooms-block__button .primary-button {
+  background-color: $ink;
+
+  &:hover {
+    background-color: tint($ink, 12%);
+  }
+}

@@ -38,6 +38,18 @@
       $(".load-more--posts").text("End of content").addClass("no-content");
     }
   });
+
+  // Rooms Slider
+  $('.rooms-block__carousel').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: false,
+    dots: true,
+    cssEase: 'linear',
+    pauseOnHover: true,
+    pauseOnFocus: true
+  });
 })(jQuery);
 
 /***/ },
