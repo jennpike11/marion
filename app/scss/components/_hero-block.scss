@@ -1,3 +1,5 @@
+@use '../base/globals' as *;
+
 .hero-block {
   position: relative;
   width: 100%;
@@ -5,11 +7,18 @@
 
   &__wrapper {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     overflow: hidden;
     z-index: -10;
+
+    &.height--1 {
+      height: 100vh;
+    }
   }
 
   &__image {
@@ -51,7 +60,11 @@
   }
 
   &__spacer {
-    height: 100vh;
+    height: calc(60vh - 16vh);
+
+    &.height--1 {
+      height: 100vh;
+    }
   }
 }
 
@@ -91,5 +104,19 @@
     to {
       transform: translate3d(0, -38vh, 0);
     }
+  }
+}
+
+// For 60vh size
+.hero-block__wrapper:not(.height--1) .hero-block__image {
+  animation-name: heroParallaxImage60 !important;
+}
+
+@keyframes heroParallaxImage60 {
+  from {
+    transform: translate3d(0, 0vh, 0) scale(1.06);
+  }
+  to {
+    transform: translate3d(0, -16vh, 0) scale(1.22);
   }
 }

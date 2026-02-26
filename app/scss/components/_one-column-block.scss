@@ -15,6 +15,11 @@
     margin-bottom: 16px;
     text-align: center;
     text-transform: uppercase;
+
+    &.font-size--large {
+      font-size: 72px;
+      line-height: 80px;
+    }
   }
 
   &__description {

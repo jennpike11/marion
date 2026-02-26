@@ -2,13 +2,13 @@
 
 if( have_rows('hero_block') ):
   while( have_rows('hero_block') ): the_row();
+    $homePage = get_sub_field('home_page');
     $image = get_sub_field('image');
     $heading = get_sub_field('heading');
-    $pageTitle = get_sub_field('page_title');
     $textColor = get_sub_field('text_color');
 ?>
 
-<section class="hero-block__wrapper" data-component="hero-block">
+<section class="hero-block__wrapper height--<?php echo $homePage ?>" data-component="hero-block">
   <div class="hero-block">
 
     <div class="hero-block__image" aria-hidden="true">
@@ -16,21 +16,15 @@ if( have_rows('hero_block') ):
     </div>
 
     <div class="hero-block__copy">
-      <?php if($pageTitle == 1){ ?>
-        <h1 class="hero-block__heading color--<?php echo $textColor ?>">
-          <?php echo $heading; ?>
-        </h1>
-      <?php } else { ?>
-        <h2 class="hero-block__heading color--<?php echo $textColor ?>">
-          <?php echo $heading; ?>
-        </h2>
-      <?php } ?>
+      <h1 class="hero-block__heading color--<?php echo $textColor ?>">
+        <?php echo $heading; ?>
+      </h1>
     </div>
 
   </div>
 </section>
 
-<div class="hero-block__spacer" aria-hidden="true"></div>
+<div class="hero-block__spacer height--<?php echo $homePage ?>" aria-hidden="true"></div>
 
 <?php endwhile; ?>
 <?php endif; ?>

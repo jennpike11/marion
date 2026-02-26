@@ -7,6 +7,7 @@
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
     $heading = get_sub_field('heading'); 
+    $headingSize = get_sub_field('heading_size'); 
     $description = get_sub_field('description');
     $link = get_sub_field('link');
   ?>
@@ -14,7 +15,7 @@
 <section class="one-column-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
   <div class="one-column-block max-width--<?php echo $maxWidth ?>">
     <?php if($heading): ?>
-      <h2 class="one-column-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
+      <h2 class="one-column-block__heading font-size--<?php echo $headingSize ?> color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
     <?php endif; ?>  
 
     <?php if($description): ?>
