@@ -17,8 +17,13 @@
     text-transform: uppercase;
 
     &.font-size--large {
-      font-size: 72px;
-      line-height: 80px;
+      font-size: 40px;
+      line-height: 48px;
+
+      @include respond(small){
+        font-size: 72px;
+        line-height: 80px;
+      }
     }
   }
 
