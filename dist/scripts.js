@@ -51,6 +51,54 @@
     pauseOnFocus: true
   });
 
+  // Rooms Carousel
+  $(function () {
+    $('.rooms-block__carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: false,
+      dots: true,
+      cssEase: 'linear',
+      pauseOnHover: true,
+      pauseOnFocus: true
+    });
+  });
+
+  // Carousel Block Slider
+  $(function () {
+    var $carousel = $('.carousel-block__images');
+    if ($carousel.length && $.fn.slick) {
+      $carousel.not('.slick-initialized').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: false,
+        draggable: true,
+        swipe: true,
+        touchMove: true,
+        swipeToSlide: true,
+        responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1
+          }
+        }]
+      });
+    }
+  });
+
   // FAQ Accordion
   $(function () {
     $('.faq-block__item').click(function () {
