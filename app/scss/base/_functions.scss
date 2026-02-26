@@ -1,0 +1,16 @@
+// Functions
+@function tint($color, $percent, $space: oklch) {
+  @return color-mix(
+    in #{$space},
+    white #{$percent},
+    #{$color}
+  );
+}
+
+@function shade($color, $percent, $space: oklch) {
+  @return color-mix(
+    in #{$space},
+    black #{$percent},
+    #{$color}
+  );
+}

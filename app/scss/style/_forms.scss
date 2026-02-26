@@ -1,0 +1,24 @@
+@use '../base/globals' as *;
+
+.wpforms-field-label,
+.wpforms-container.wpforms-container-full.brochure-form .wpforms-field-label {
+	margin-bottom: 8px;
+	font-family: $font-primary;
+	font-weight: 100;
+}
+
+.with_frm_style .frm_message,
+.frm_success_style,
+.with_frm_style .frm_message p {
+	border: 0;
+	color: $black;
+	background: unset;
+}
+
+.with_frm_style .frm_inside_container.frm_label_float_top>label {
+	font-size: 14px;
+}
+
+.frm-show-form select {
+	margin-top: 8px;
+}

@@ -1,0 +1,22 @@
+@use '../base/globals' as *;
+
+.page-template-page-no-builder {
+  .entry-content {
+    @include container;
+    margin-bottom: 32px*2;
+
+    ul li {
+      margin-bottom: 20px;
+      list-style-type: disc;
+    }
+
+    ol li {
+      margin-bottom: 20px;
+      list-style-type: armenian;
+    }
+  }
+
+  .entry-header h1 {
+    margin: 24px 0 32px;
+  }
+}

@@ -1,0 +1,48 @@
+@use '../base/globals' as *;
+
+.primary-button, .frm_style_formidable-style.with_frm_style .frm_submit button,
+.frm_style_formidable-style.with_frm_style .frm_submit button:hover,
+.frm_style_formidable-style.with_frm_style .frm_submit button:active, .load-more {
+    @include flex-center;
+    width: fit-content;
+    min-width: 160px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 24px;
+    color: $white;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: $harbor;    
+    cursor: pointer;
+    transition: background-color .4s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: tint($harbor, 10%);
+    }
+}
+
+.read-more {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: $black;
+
+    &:after {
+        content: '\f30b';
+        margin-left: 4px;
+        font-family: fontawesome;
+        transition: margin .2s linear;
+    }
+
+    &:hover:after {
+        margin-left: 8px;
+    }
+}
+
+.load-more {
+    @include container;
+    width: fit-content !important;
+    margin-bottom: 32px;
+}

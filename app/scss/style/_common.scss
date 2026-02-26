@@ -1,0 +1,328 @@
+@use '../base/globals' as *;
+
+// reset browser defaults
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  color: $black;
+  font-family: $font-primary; 
+  font-size: 16px;
+  line-height: 24px;
+  scroll-behavior: smooth;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  z-index: 0;
+
+  @include respond(large){
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &.active {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 16px;
+  color: $black;
+  font-family: $font-secondary;
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+  color: $black;
+
+  @include respond(small) {
+    font-size: 56px;
+    line-height: 64px;
+    color: $black;
+  }
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  color: $black;
+  
+  @include respond(small){
+    font-size: 48px;
+    line-height: 56px;
+    color: $black;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+
+  @include respond(small) {
+      font-size: 32px;
+      line-height: 40px;
+    }
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 24px;
+
+  @include respond(small) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+p {
+  margin-bottom: 16px;
+
+  &:last-of-type {
+    margin-bottom: unset;
+  }
+}
+ 
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.entry-footer {
+  display: none;
+}
+
+.container {
+  @include container;
+}
+
+.show-on-mobile {
+  @include respond(large){
+    display: none;
+  }
+}
+
+.two-column {
+  @include respond(small){
+    column-count: 2;
+    column-gap: 32px;
+  }
+}
+
+.icon-checkmark {
+  display: block;
+  margin-bottom: 8px;
+
+  &:before {
+    content: '\f00c';
+    margin-right: 8px;
+    font-family: fontawesome;
+  }
+}
+
+.padding--xsmall {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.padding--small {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.padding--medium {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  
+  @include respond(small) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.padding--large {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include respond(small){
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+.padding--xlarge {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  
+  @include respond(small) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.width--small {
+  max-width: 800px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Background colors for sections, buttons, etc
+.background-color {
+  &--canvas {
+    background-color: $canvas;
+  }  
+
+  &--ember {
+    background-color: $ember;
+  }
+
+  &--clay {
+    background-color: $clay;
+  }
+
+   &--sage {
+    background-color: $sage;
+  }
+
+   &--harbor {
+    background-color: $harbor;
+  }
+
+   &--ink {
+    background-color: $ink;
+  }
+}
+
+
+// Font color options
+.color {
+  &--black {
+    color: $black;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--canvas {
+    color: $canvas;
+  }
+
+  &--ember {
+    color: $ember;
+  }
+
+  &--clay {
+    color: $clay;
+  }
+
+  &--sage {
+    color: $sage;
+  }
+
+  &--harbor {
+    color: $harbor;
+  }
+
+  &--ink {
+    color: $ink;
+  }
+}
+
+.comments-area {
+  display: none;
+}
+
+.fa-hand-point-right:before {
+  margin-right: 8px;
+  font-family: fontawesome;
+}
+
+.linkedin:after {
+  content: '\f0e1';
+  font-family: fontawesome;
+}
+
+.instagram:after {
+  content: '\f16d';
+  font-family: fontawesome;
+}
+
+.facebook:after {
+  content: '\f39e';
+  font-family: fontawesome;
+}
+
+.pinterest:after {
+  content: '\f231';
+  font-family: fontawesome;
+}
+
+.email:after {
+  content: '\f0e0';
+  font-family: fontawesome;
+}
+
+.twitter:after {
+  content: '\f099';
+  font-family: fontawesome;
+}
+
+.youtube:after {
+  content: '\f167';
+  font-family: fontawesome;
+}
+
+.legal-pages {
+  margin: 120px 0 64px;
+
+  .entry-title {
+    max-width: 640px;
+    margin: 0 auto 32px;
+    text-align: center;
+    font-size: 28px;
+    line-height: 36px;
+    font-family: $font-secondary;
+  }
+
+  a, a:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+}  

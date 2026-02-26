@@ -1,0 +1,84 @@
+@use './variables' as *;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == xsmall {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoint == small {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == medium {
+    @media (min-width: 812px) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xlarge {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxlarge {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  }
+}
+
+
+// Container
+@mixin container {
+  width: calc(100% - 56px);
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond(small) {
+    width: calc(100% - 64px);
+  }
+
+  @include respond(xlarge){
+    width: 100%;
+  }
+}
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// Padding
+@mixin vertical-padding {
+  padding: 1rem 0;
+
+  @include respond(medium){
+    padding: 5rem 0;
+  }
+
+  @include respond(xlarge){
+    padding: 6rem 0;
+  }
+}
+
+// Line Clamp
+@mixin line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

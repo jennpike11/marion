@@ -1,0 +1,21 @@
+@use '../base/globals' as *;
+
+.spacer-block--single {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include respond(large){ 
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.spacer-block--double {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include respond(large){ 
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
