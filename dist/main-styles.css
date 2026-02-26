@@ -1035,9 +1035,6 @@ html.active .menu-toggle:after {
 .faq-block {
   max-width: 900px;
 }
-.faq-block__wrapper {
-  margin-bottom: 64px;
-}
 .faq-block__heading {
   text-align: center;
 }
@@ -1188,6 +1185,35 @@ html.active .menu-toggle:after {
     transform: translate3d(0, -16vh, 0) scale(1.22);
   }
 }
+.image-block {
+  width: calc(100% - 56px);
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .image-block {
+    width: calc(100% - 64px);
+  }
+}
+@media (min-width: 1280px) {
+  .image-block {
+    width: 100%;
+  }
+}
+.image-block.alignment--full-screen {
+  width: 100%;
+  max-width: 100%;
+}
+.image-block.alignment--center {
+  max-width: 1000px;
+}
+.image-block__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .one-column-block {
   width: calc(100% - 56px);
   max-width: 1320px;

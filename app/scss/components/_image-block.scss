@@ -1,0 +1,22 @@
+@use '../base/globals' as *;
+
+.image-block {
+  @include container;
+
+  &.alignment--full-screen {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.alignment--center {
+    max-width: 1000px;
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
