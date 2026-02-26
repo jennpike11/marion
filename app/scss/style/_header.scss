@@ -30,7 +30,7 @@
   }
 
   .main-navigation {
-    @include respond(large){
+    @include respond-up(large){
       width: 80%;
       display: flex;
       justify-content: flex-end;
@@ -38,7 +38,7 @@
   }
 
   .menu {
-    @include respond(large){
+    @include respond-up(large){
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -50,7 +50,7 @@
       color: $black;
       font-size: 24px;
 
-      @include respond(large){
+      @include respond-up(large){
         margin: 0;
         font-size: 18px;
       }
@@ -60,7 +60,7 @@
       }
 
       &:hover:after {
-        @include respond(large){
+        @include respond-up(large){
           content: '';
           display: block;
           position: absolute;
@@ -75,7 +75,7 @@
     }
 
     li:last-of-type:hover:after {
-      @include respond(large){
+      @include respond-up(large){
         display: none;
       }
     }
@@ -93,11 +93,11 @@
   background-color: $canvas;
   transition: left .4s;
 
-  @include respond(large){
+  @include respond-up(large){
     justify-content: flex-end;
   }
     
-  @include respond(large){
+  @include respond-up(large){
     position: unset;
     height: unset;
     padding: unset;
@@ -113,7 +113,7 @@
   li {
     margin-bottom: 64px;
 
-    @include respond(large){
+    @include respond-up(large){
       margin-bottom: unset;
     }
 
@@ -128,7 +128,7 @@
       background-size: contain;
       transition: margin 0.3s ease-in-out;
 
-      @include respond(large){
+      @include respond-up(large){
         display: none;
       }
     }
@@ -139,7 +139,7 @@
   }
 
   a {
-    @include respond(large){
+    @include respond-up(large){
       font-size: 18px !important;
     }
   }
@@ -154,7 +154,7 @@
   font-size: 0;
   background: 0;
 
-  @include respond(large){
+  @include respond-up(large){
     display: none;
   }
 

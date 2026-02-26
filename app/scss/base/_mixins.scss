@@ -1,36 +1,20 @@
 @use './variables' as *;
 
-@mixin respond($breakpoint) {
-  @if $breakpoint == xsmall {
-    @media (max-width: 767px) {
-      @content;
-    }
-  }
-  @if $breakpoint == small {
-    @media (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == medium {
-    @media (min-width: 812px) {
-      @content;
-    }
-  }
-  @if $breakpoint == large {
-    @media (min-width: 1024px) {
-      @content;
-    }
-  }
-  @if $breakpoint == xlarge {
-    @media (min-width: 1280px) {
-      @content;
-    }
-  }
-  @if $breakpoint == xxlarge {
-    @media (min-width: 2000px) {
-      @content;
-    }
-  }
+@mixin respond-up($breakpoint) {
+  @if $breakpoint == xsmall { @media (min-width: 0px) { @content; } }
+  @if $breakpoint == small { @media (min-width: 768px) { @content; } }
+  @if $breakpoint == medium { @media (min-width: 812px) { @content; } }
+  @if $breakpoint == large { @media (min-width: 1024px) { @content; } }
+  @if $breakpoint == xlarge { @media (min-width: 1280px) { @content; } }
+  @if $breakpoint == xxlarge { @media (min-width: 2000px) { @content; } }
+}
+
+@mixin respond-down($breakpoint) {
+  @if $breakpoint == xsmall { @media (max-width: 767px) { @content; } }
+  @if $breakpoint == small { @media (max-width: 811px) { @content; } }
+  @if $breakpoint == medium { @media (max-width: 1023px) { @content; } }
+  @if $breakpoint == large { @media (max-width: 1279px) { @content; } }
+  @if $breakpoint == xlarge { @media (max-width: 1999px) { @content; } }
 }
 
 
@@ -41,11 +25,11 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include respond(small) {
+  @include respond-up(small) {
     width: calc(100% - 64px);
   }
 
-  @include respond(xlarge){
+  @include respond-up(xlarge){
     width: 100%;
   }
 }
@@ -66,11 +50,11 @@
 @mixin vertical-padding {
   padding: 1rem 0;
 
-  @include respond(medium){
+  @include respond-up(medium){
     padding: 5rem 0;
   }
 
-  @include respond(xlarge){
+  @include respond-up(xlarge){
     padding: 6rem 0;
   }
 }

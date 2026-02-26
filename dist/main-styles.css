@@ -1081,12 +1081,22 @@ html.active .menu-toggle:after {
   right: 0;
   bottom: auto;
   width: 100vw;
-  height: 60vh;
+  height: 40vh;
   overflow: hidden;
   z-index: -10;
 }
+@media (min-width: 768px) {
+  .hero-block__wrapper {
+    height: 60vh;
+  }
+}
 .hero-block__wrapper.height--1 {
-  height: 100vh;
+  height: 40vh;
+}
+@media (min-width: 768px) {
+  .hero-block__wrapper.height--1 {
+    height: 100vh;
+  }
 }
 .hero-block__image {
   position: absolute;
@@ -1122,10 +1132,17 @@ html.active .menu-toggle:after {
   will-change: transform;
 }
 .hero-block__spacer {
-  height: 44vh;
+  height: 24vh;
 }
-.hero-block__spacer.height--1 {
-  height: 100vh;
+@media (min-width: 768px) {
+  .hero-block__spacer {
+    height: 44vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero-block__spacer.height--1 {
+    height: 100vh;
+  }
 }
 
 @supports (animation-timeline: scroll()) {

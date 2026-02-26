@@ -4,7 +4,7 @@
   @include container;
 
   &__rooms {
-    @include respond(small){
+    @include respond-up(small){
       @include flex-between;
       flex-wrap: wrap;
     }
@@ -13,7 +13,7 @@
    &__room {
     margin-bottom: 64px;
     
-    @include respond(small){
+    @include respond-up(small){
      width: calc(50% - 32px);
     }
   }
@@ -33,7 +33,7 @@
     margin-top: 32px;
     text-transform: uppercase;
 
-    @include respond(small){
+    @include respond-up(small){
       margin-top: 48px;
     }
   }
@@ -41,7 +41,7 @@
   &__button {
     margin-top: 32px;
 
-    @include respond(small){
+    @include respond-up(small){
       margin-top: 48px;
     }
   }

@@ -26,7 +26,7 @@ html {
   -o-font-smoothing: antialiased;
   z-index: 0;
 
-  @include respond(large){
+  @include respond-up(large){
     font-size: 18px;
     line-height: 26px;
   }
@@ -59,7 +59,7 @@ h1 {
   line-height: 48px;
   color: $black;
 
-  @include respond(small) {
+  @include respond-up(small) {
     font-size: 56px;
     line-height: 64px;
     color: $black;
@@ -71,7 +71,7 @@ h2 {
   line-height: 40px;
   color: $black;
   
-  @include respond(small){
+  @include respond-up(small){
     font-size: 48px;
     line-height: 56px;
     color: $black;
@@ -82,7 +82,7 @@ h3 {
   font-size: 24px;
   line-height: 32px;
 
-  @include respond(small) {
+  @include respond-up(small) {
       font-size: 32px;
       line-height: 40px;
     }
@@ -92,7 +92,7 @@ h4 {
   font-size: 16px;
   line-height: 24px;
 
-  @include respond(small) {
+  @include respond-up(small) {
     font-size: 24px;
     line-height: 32px;
   }
@@ -133,13 +133,13 @@ img {
 }
 
 .show-on-mobile {
-  @include respond(large){
+  @include respond-up(large){
     display: none;
   }
 }
 
 .two-column {
-  @include respond(small){
+  @include respond-up(small){
     column-count: 2;
     column-gap: 32px;
   }
@@ -170,7 +170,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   
-  @include respond(small) {
+  @include respond-up(small) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -180,7 +180,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  @include respond(small){
+  @include respond-up(small){
     padding-top: 96px;
     padding-bottom: 96px;
   }
@@ -190,7 +190,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   
-  @include respond(small) {
+  @include respond-up(small) {
     padding-top: 120px;
     padding-bottom: 120px;
   }

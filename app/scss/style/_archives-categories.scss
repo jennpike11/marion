@@ -16,7 +16,7 @@
     width: 100%;
     margin-top: 24px;
 
-    @include respond(small){
+    @include respond-up(small){
       margin-bottom: 32px;
     }    
   }
@@ -26,7 +26,7 @@
     height: 240px;
     object-fit: cover;
 
-    @include respond(large) {
+    @include respond-up(large) {
       height: 300px;
     }
   }
@@ -58,7 +58,7 @@
   flex-wrap: wrap;
   margin-top: 24px;
 
-  @include respond(small){
+  @include respond-up(small){
     margin-top: 48px;
   }
 
@@ -68,13 +68,13 @@
     padding-bottom: 40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    @include respond(small){
+    @include respond-up(small){
       width: calc(50% - 32px);
       margin-bottom: 32px*2;
       padding-bottom: 16px;
     }
 
-    @include respond(large) {
+    @include respond-up(large) {
       width: calc(33.33% - 32px);
     }
 

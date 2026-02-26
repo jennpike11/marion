@@ -19,7 +19,7 @@
     line-height: 40px;
     font-family: $font-secondary;
 
-    @include respond(small) {
+    @include respond-up(small) {
         font-size: 48px;
         line-height: 56px;
       }
@@ -73,7 +73,7 @@
     line-height: 32px;
     text-transform: unset;
 
-    @include respond(small){
+    @include respond-up(small){
         font-size: 32px;
         line-height: 40px;
     }
@@ -84,7 +84,7 @@
     font-size: 20px;
     line-height: 28px;
 
-    @include respond(small) {
+    @include respond-up(small) {
       font-size: 24px;
       line-height: 32px;
     }
