@@ -50,6 +50,21 @@
     pauseOnHover: true,
     pauseOnFocus: true
   });
+
+  // FAQ Accordion
+  $(function () {
+    $('.faq-block__item').click(function () {
+      if ($(this).hasClass('active')) {
+        $('.faq-block__answer').slideUp();
+        $('.faq-block__item').removeClass('active');
+      } else {
+        $('.faq-block__item').removeClass('active');
+        $(this).addClass('active');
+        $('.faq-block__answer').slideUp();
+        $(this).find('.faq-block__answer').slideDown();
+      }
+    });
+  });
 })(jQuery);
 
 /***/ },

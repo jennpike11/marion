@@ -1047,26 +1047,25 @@ html.active .menu-toggle:after {
 .faq-block__item.active .faq-block__title:after {
   content: "\f106";
 }
-.faq-block__title {
+.faq-block__question {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 27px 60px 26px 30px;
-  color: #000000;
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
 }
-.faq-block__title:after {
+.faq-block__question:after {
   content: "\f107";
   font-size: 26px;
   font-family: "FontAwesome";
   font-weight: 400;
-  color: #000000;
 }
-.faq-block__details {
+.faq-block__answer {
   display: none;
   padding: 0 30px 28px;
+  color: #555555;
 }
 
 .hero-block {
