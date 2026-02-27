@@ -1,0 +1,57 @@
+@use '../base/globals' as *;
+
+.three-column-block {
+  @include respond-up(small){
+    @include flex-between;
+  }
+
+  &__column {
+    @include flex-center;
+    flex-direction: column;
+    height: 88vh;
+    padding: 72px 40px;
+
+    @include respond-up(small){
+      flex: 1;
+    }
+  }
+
+  &__image {
+    max-width: 420px;
+    max-height: 420px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   
+      display: block;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+  }
+
+  &__subheading {
+    margin-top: auto;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+  }
+
+  &__description {
+    font-size: clamp(.8rem, 2vw, 1rem);
+    line-height: 1.2;
+    color: $white;
+  }
+}
