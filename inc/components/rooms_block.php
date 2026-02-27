@@ -23,7 +23,7 @@
               <div class="rooms-block__image"><img src="<?php echo $roomImage['url'] ?>" alt="<?php echo $roomImage['title'] ?>"></div>
             <?php endwhile; ?>
           </div>
-          <h4 class="rooms-block__title color--<?php echo $textColor ?>"><?php echo $roomTitle ?></h4>
+          <h3 class="rooms-block__title color--<?php echo $textColor ?>"><?php echo $roomTitle ?></h3>
           <div class="rooms-block__description color--<?php echo $textColor ?>"><?php echo $roomDescription ?></div>
           <div class="rooms-block__button"><a class="primary-button" href="<?php echo $roomButton['title'] ?>"><?php echo $roomButton['title'] ?></a></div>
         </div>
