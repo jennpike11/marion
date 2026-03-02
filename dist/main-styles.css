@@ -1,6 +1,10 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./app/scss/main.scss ***!
   \*****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap);
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./app/scss/main.scss (1) ***!
+  \*********************************************************************************************************************************************/
 .archive .category-header, .category .category-header, .search-results .category-header {
   background: #E6C08B;
 }
@@ -133,7 +137,7 @@
   padding: 0 16px;
   border-radius: 24px;
   color: #ffffff;
-  font-family: sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 16px;
   font-weight: bold;
   background-color: #4F7098;
@@ -204,12 +208,7 @@ html {
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   z-index: 0;
-}
-@media (min-width: 1024px) {
-  html {
-    font-size: 18px;
-    line-height: 26px;
-  }
+  font-weight: 300;
 }
 html.active {
   overflow-y: hidden;
@@ -221,7 +220,7 @@ body {
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 h1,
@@ -232,7 +231,8 @@ h5,
 h6 {
   margin-bottom: 16px;
   line-height: 1;
-  font-family: serif;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
 }
 
 h1 {
@@ -462,78 +462,58 @@ img {
   text-align: center;
   font-size: 28px;
   line-height: 36px;
-  font-family: serif;
+  font-family: "Fraunces", serif;
 }
 .legal-pages a, .legal-pages a:hover {
   color: #000000;
   text-decoration: underline;
 }
 
-.widget-area {
+.site-footer {
   width: calc(100% - 56px);
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: 768px) {
-  .widget-area {
+  .site-footer {
     width: calc(100% - 64px);
   }
 }
 @media (min-width: 1280px) {
-  .widget-area {
+  .site-footer {
     width: 100%;
   }
 }
-@media (min-width: 812px) {
-  .widget-area {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-.widget-area li {
-  list-style-type: none !important;
-}
-.widget-area__wrapper {
-  padding: 64px 0 24px;
+.site-footer__wrapper {
+  margin-top: auto;
+  padding: 32px 0 0;
   background: #E6C08B;
   color: #ffffff;
 }
-.widget-area .wp-block-column {
-  flex: 1;
+.site-footer__socials {
+  display: flex;
+  margin-top: 20px;
 }
-@media (min-width: 1024px) {
-  .widget-area .wp-block-column {
-    padding-right: 24px;
-  }
+.site-footer__socials a:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 }
-.widget-area .wp-block-column:last-of-type {
-  flex: 1.5;
-  font-size: 12px;
-  line-height: 20px;
+.site-footer__socials a:last-of-type:after {
+  margin-right: unset;
 }
-@media (min-width: 1024px) {
-  .widget-area .wp-block-column:last-of-type {
-    padding-right: unset;
-  }
-}
-.widget-area .wp-block-column:last-of-type * {
-  font-size: 12px;
-  line-height: 20px;
-}
-.widget-area .wp-block-column h4 {
-  color: #E6C08B;
-}
-.widget-area .wp-block-image, .widget-area .menu-item {
-  margin-bottom: 16px;
-}
-
 .site-footer__legal {
   padding: 12px;
   border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
   font-size: 10px;
   text-align: center;
-  color: #000000;
+  color: #ffffff;
   background: #E6C08B;
 }
 @media (min-width: 812px) {
@@ -541,14 +521,70 @@ img {
     font-size: 12px;
   }
 }
-.site-footer__legal > div:last-of-type {
-  font-size: 10px;
+.site-footer__legal a, .site-footer__legal a:hover {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+.site-footer p {
+  margin-bottom: unset;
+}
+.site-footer a, .site-footer a:hover {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+.site-footer .widget-area__wrapper {
+  padding-bottom: 32px;
+}
+.site-footer .wp-block-column {
+  flex: 1;
+}
+.site-footer .wp-block-column:first-of-type {
+  align-self: center;
+}
+.site-footer .wp-block-column:last-of-type {
+  flex: 1.8;
+}
+.site-footer .wp-block-image img {
+  width: fit-content;
+  max-height: 80px !important;
+  object-fit: contain;
+}
+.site-footer .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 812px) {
+  .site-footer .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    display: unset;
+  }
+}
+
+.widgettitle {
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .widgettitle {
+    text-align: left;
+  }
+}
+
+.menu-footer-menu-container ul {
+  column-count: 3;
+}
+.menu-footer-menu-container li {
+  margin-bottom: 12px;
 }
 
 .wpforms-field-label,
 .wpforms-container.wpforms-container-full.brochure-form .wpforms-field-label {
   margin-bottom: 8px;
-  font-family: sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 100;
 }
 
@@ -808,7 +844,7 @@ html.active .menu-toggle:after {
   margin: 64px 0 32px;
   font-size: 32px;
   line-height: 40px;
-  font-family: serif;
+  font-family: "Fraunces", serif;
 }
 @media (min-width: 768px) {
   .single-post .entry-content__title {
@@ -850,7 +886,7 @@ html.active .menu-toggle:after {
   display: flex;
   justify-content: space-between;
   color: #000000;
-  font-family: serif;
+  font-family: "Fraunces", serif;
 }
 .single-post .nav-previous .nav-title:before {
   content: "\f177";
@@ -906,7 +942,7 @@ html.active .menu-toggle:after {
   padding-bottom: 4px;
   border: 0;
   border-bottom: 1px solid #000000;
-  font-family: sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 @media (min-width: 768px) {
   .search-field {
@@ -919,7 +955,7 @@ html.active .menu-toggle:after {
   border: 0;
   border-bottom: 1px solid #000000;
   text-transform: uppercase;
-  font-family: serif;
+  font-family: "Fraunces", serif;
   background: 0;
 }
 
@@ -1095,7 +1131,6 @@ html.active .menu-toggle:after {
   max-width: 1100px;
   font-size: clamp(2.4rem, 6vw, 5.5rem);
   line-height: 1.05;
-  font-weight: 300;
   letter-spacing: 0.02em;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   will-change: transform;
