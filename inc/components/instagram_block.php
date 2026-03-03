@@ -4,11 +4,16 @@
   while( have_rows('instagram_block') ): the_row(); 
     $verticalPadding = get_sub_field('vertical_padding');
     $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
+    $heading = get_sub_field('heading');
     $shortcode = get_sub_field('shortcode');
   ?>
 
 <section class="instagram-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
   <div class="instagram-block">
+    <?php if($heading): ?>
+      <h2 class="instagram-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
+    <?php endif; ?> 
     <?php if($shortcode): ?>
       <div class="instagram-block__feed"><?php echo do_shortcode($shortcode); ?></div>
     <?php endif; ?> 

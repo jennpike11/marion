@@ -2,38 +2,70 @@
 
 .one-column-block {
   @include container;
-
-  &.max-width--small {
-    max-width: 800px;
-  }
-
-  &.max-width--medium {
-    max-width: 1024px;
-  }
+  overflow: hidden;
 
   &__heading {
     margin-bottom: 16px;
     text-align: center;
     text-transform: uppercase;
 
-    &.font-size--large {
-      font-size: clamp(2.5rem, 2rem + 2vw, 4.5rem);
+    &.heading-width--small {
+      max-width: 800px;
+      margin: 0 auto 16px;
     }
-  }
+
+    &.heading-width--medium {
+      max-width: 1024px;
+      margin: 0 auto 16px;
+    }
+
+    &.font-size--large {
+      font-size: clamp(2rem, 6vw, 8rem);
+      line-height: 1;
+    }
+  } 
 
   &__description {
+    &.description-width--small {
+      max-width: 480px;
+      margin: 0 auto 16px;
+
+      @include respond-up(large){
+        max-width: 800px;
+      }
+    }
+
+    &.description-width--medium {
+      max-width: 1024px;
+      margin: 16px auto;
+    }
+
     h1, h2, h3, h4, h5 {
       margin: 24px 0 8px;
+    }
+
+    p {
+      font-size: clamp(1rem, 5vw, 1.2rem);
+      line-height: 1.2;
     }
 
     li {
       margin: 0 0 8px 16px;
       list-style-type: disc;
+      font-size: 1.4rem;
+      line-height: 1.2;
     }
   }
 
-  .primary-button {
-    margin: 48px auto 0;
-  }
+  &__button {
+    &.button-alignment--center {
+      width: fit-content;
+      margin: auto;
+    }
 
+    &.button-alignment--right {
+      width: fit-content;
+      margin-left: auto;
+    }
+  }
 }

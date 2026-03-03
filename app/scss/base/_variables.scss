@@ -6,17 +6,6 @@ $border-radius: 2px;
 
 // Colors
 
-// Palette Option 3
-$canvas:  #D9A566;
-$ember:   #E07A7A;
-$clay:    #868E74;
-$sage:    #86BDD1;
-$harbor:  #4B6389;
-$ink:     #4C4C5E;
-$black:   #000000;
-$white:   #ffffff;
-$charcoal:#555555;
-
 // Palette Option 2
 $canvas:  #E6C38F;
 $ember:   #D0952C;
@@ -24,6 +13,16 @@ $clay:    #D9919E;
 $sage:    #E0762F;
 $harbor:  #A7B49D;
 $ink:     #3F3E3B; 
+$black:   #000000;
+$white:   #ffffff;
+
+// Palette Option 3
+$canvas:  #D9A566;
+$ember:   #E07A7A;
+$clay:    #868E74;
+$sage:    #86BDD1;
+$harbor:  #4B6389;
+$ink:     #4C4C5E;
 $black:   #000000;
 $white:   #ffffff;
 
@@ -39,5 +38,5 @@ $white:   #ffffff;
 
 
 // Typography
-$font-primary: "Source Sans 3", sans-serif;
-$font-secondary: "Fraunces", serif;
+$font-primary: "Fraunces", serif;
+$font-secondary: "Source Sans 3", sans-serif;

@@ -16,8 +16,10 @@
 			<div class="three-column-block__column background-color--<?php echo $backgroundColor ?>">
         <h2 class="three-column-block__heading"><?php echo $heading ?></h2>
         <div class="three-column-block__image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></div>
-				<h3 class="three-column-block__subheading"><?php echo $subheading ?></h3>
-				<div class="three-column-block__description"><?php echo $description ?></div>
+        <div class="three-column-block__text">
+          <h3 class="three-column-block__subheading"><?php echo $subheading ?></h3>
+          <div class="three-column-block__description"><?php echo $description ?></div>
+        </div>
 			</div>
       <?php endwhile; ?>
       <?php endif; ?>

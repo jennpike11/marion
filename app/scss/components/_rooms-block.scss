@@ -19,7 +19,11 @@
   }
 
   &__image {
-    height: 560px !important;
+    height: 400px !important;
+    
+    @include respond-up(large){
+      height: 560px !important;
+    }
 
     img {
       width: 100%;

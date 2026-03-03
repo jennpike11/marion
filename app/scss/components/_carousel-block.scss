@@ -1,7 +1,21 @@
+@use '../base/globals' as *;
+
 .carousel-block {
+  .slick-list {
+    cursor: ew-resize;
+  }
+
   .slick-slide {
     height: 560px;
     margin: 16px;
+
+    @include respond-up(small){
+      height: 320px;
+    }
+
+    @include respond-up(xlarge){
+      height: 560px;
+    }
 
     img {
       width: 100%;

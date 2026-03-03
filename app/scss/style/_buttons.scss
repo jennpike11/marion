@@ -1,25 +1,82 @@
 @use '../base/globals' as *;
 
-.primary-button, .frm_style_formidable-style.with_frm_style .frm_submit button,
-.frm_style_formidable-style.with_frm_style .frm_submit button:hover,
-.frm_style_formidable-style.with_frm_style .frm_submit button:active, .load-more {
-    @include flex-center;
-    width: fit-content;
-    min-width: 160px;
-    height: 38px;
-    padding: 0 16px;
-    border-radius: 24px;
-    color: $white;
-    font-family: $font-primary;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: $harbor;    
-    cursor: pointer;
-    transition: background-color .4s ease-in-out;
+.primary-button,
+.load-more,
+.frm_style_formidable-style.with_frm_style .frm_submit button {
+  @include flex-center;
+  width: fit-content;
+  min-width: 160px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 24px;
+  color: $white;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $harbor;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
 
-    &:hover {
-        color: $white;
-        background-color: tint($harbor, 12%);
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: $white;
+    background-color: tint($harbor, 12%);
+  }
+}
+
+.primary-button.button-color--canvas {
+    background-color: $canvas;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($canvas, 12%);
+    }
+}
+
+.primary-button.button-color--ember {
+    background-color: $ember;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($ember, 12%);
+    }
+}
+
+.primary-button.button-color--clay {
+    background-color: $clay;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($clay, 12%);
+    }
+}
+
+.primary-button.button-color--sage {
+    background-color: $sage;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($sage, 12%);
+    }
+}
+
+.primary-button.button-color--ink {
+    background-color: $ink;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($ink, 12%);
     }
 }
 

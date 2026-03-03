@@ -1,1 +1,14 @@
 @use '../base/globals' as *;
+
+.instagram-block {
+  &__wrapper {
+    @include respond-down(small){
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}
