@@ -5,6 +5,7 @@
    $columnAlignment = get_sub_field('column_alignment'); 
    $backgroundColor = get_sub_field('background_color');
    $textColor = get_sub_field('text_color');
+   $buttonColor = get_sub_field('button_color');
    $headingOne = get_sub_field('column_one_heading'); 
    $descriptionOne = get_sub_field('column_one_description');
    $imageOne = get_sub_field('column_one_image');
@@ -39,7 +40,7 @@
                <?php endif; ?>
 
                <?php if( $buttonOne != ""): ?>
-                  <a class="primary-button" href="<?php echo $buttonOne['url'] ?>"><?php echo $buttonOne['title'] ?></a>
+                  <a class="primary-button button-color--<?php echo $buttonColor ?>" href="<?php echo $buttonOne['url'] ?>"><?php echo $buttonOne['title'] ?></a>
                <?php endif; ?>
             </div>
          <?php endif; ?>
@@ -66,7 +67,7 @@
                <?php endif; ?>
 
                <?php if( $buttonTwo != ""): ?>
-                  <a class="primary-button" href="<?php echo $buttonTwo['url'] ?>"><?php echo $buttonTwo['title'] ?></a>
+                  <a class="primary-button button-color--<?php echo $buttonColor ?>" href="<?php echo $buttonTwo['url'] ?>"><?php echo $buttonTwo['title'] ?></a>
                <?php endif; ?>
             </div>
          <?php endif; ?>  

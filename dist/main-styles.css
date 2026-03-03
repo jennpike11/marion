@@ -38,8 +38,8 @@
 .archive .read-more, .category .read-more, .search-results .read-more {
   margin: 16px 0 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #000000;
-  color: #000000;
+  border-bottom: 1px solid #555555;
+  color: #555555;
 }
 
 .category-items__item:nth-child(n+5) {
@@ -199,7 +199,7 @@
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: #000000;
+  color: #555555;
 }
 .read-more:after {
   content: "\f30b";
@@ -428,7 +428,7 @@ img {
 }
 
 .color--black {
-  color: #000000;
+  color: #555555;
 }
 .color--white {
   color: #ffffff;
@@ -508,7 +508,7 @@ img {
   font-family: "Source Sans 3", sans-serif;
 }
 .legal-pages a, .legal-pages a:hover {
-  color: #000000;
+  color: #555555;
   text-decoration: underline;
 }
 
@@ -646,7 +646,7 @@ img {
 .frm_success_style,
 .with_frm_style .frm_message p {
   border: 0;
-  color: #000000;
+  color: #555555;
   background: unset;
 }
 
@@ -658,185 +658,80 @@ img {
   margin-top: 8px;
 }
 
-.site-header {
-  width: calc(100% - 56px);
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 768px) {
-  .site-header {
-    width: calc(100% - 64px);
-  }
-}
-@media (min-width: 1280px) {
-  .site-header {
-    width: 100%;
-  }
-}
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.site-header__wrapper {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  width: 100%;
-}
-.site-header__wrapper.scrolled {
-  background-color: #E6C08B;
-  transition: background-color 0.2s ease-in-out;
-}
-.site-header__logo {
-  height: 40px;
-  object-fit: contain;
-  margin: 8px 0 0;
-}
-@media (min-width: 1024px) {
-  .site-header .main-navigation {
-    width: 80%;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-@media (min-width: 1024px) {
-  .site-header .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 64px;
-  }
-}
-.site-header .menu li {
-  position: relative;
-  color: #000000;
-  font-size: 24px;
-}
-@media (min-width: 1024px) {
-  .site-header .menu li {
-    margin: 0;
-    font-size: 18px;
-  }
-}
-.site-header .menu li:hover {
-  color: #000000;
-}
-@media (min-width: 1024px) {
-  .site-header .menu li:hover:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 24px;
-    margin-top: 4px;
-    background-image: url("https://pikexdigital.com/wp-content/uploads/2025/12/underline_black.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
-@media (min-width: 1024px) {
-  .site-header .menu li:last-of-type:hover:after {
-    display: none;
-  }
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+  height: 100%;
 }
 
-.menu-primary-menu-container {
+.site-header__logo {
+  display: none;
+}
+.site-header__heading {
+  margin-top: 2vh;
+  font-size: 38px;
+  line-height: 46px;
+  color: #555555;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .site-header__heading {
+    font-size: 88px;
+    line-height: 96px;
+  }
+}
+.site-header .main-navigation {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 48px;
-  left: 100%;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
   width: 100%;
   height: 100vh;
-  padding: 64px 40px;
-  background-color: #E6C08B;
-  transition: left 0.4s;
+  padding: 120px 40px 40px;
+  background: #979CAD;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-in-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-@media (min-width: 1024px) {
-  .menu-primary-menu-container {
-    justify-content: flex-end;
+@media (min-width: 768px) {
+  .site-header .main-navigation {
+    padding: 120px 8vw 48px 28vw;
   }
 }
-@media (min-width: 1024px) {
-  .menu-primary-menu-container {
-    position: unset;
-    height: unset;
-    padding: unset;
-    transition: unset;
-    background-color: unset;
+.site-header.active .main-navigation {
+  transform: translateY(0);
+}
+.site-header .main-navigation li {
+  margin-bottom: 32px;
+  color: #EAAA23;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .site-header .main-navigation li {
+    font-size: 48px;
   }
-}
-html.active .menu-primary-menu-container {
-  top: 48px;
-  left: 0;
-}
-.menu-primary-menu-container li {
-  margin-bottom: 64px;
-}
-@media (min-width: 1024px) {
-  .menu-primary-menu-container li {
-    margin-bottom: unset;
-  }
-}
-.menu-primary-menu-container li:after {
-  content: "";
-  display: inline-block;
-  width: 50px;
-  height: 12px;
-  margin-left: 4px;
-  background-image: url("https://pikexdigital.com/wp-content/uploads/2025/12/arrow_right_black.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: margin 0.3s ease-in-out;
-}
-@media (min-width: 1024px) {
-  .menu-primary-menu-container li:after {
-    display: none;
-  }
-}
-.menu-primary-menu-container li:hover:after {
-  margin-left: 12px;
-}
-@media (min-width: 1024px) {
-  .menu-primary-menu-container a {
-    font-size: 18px !important;
-  }
-}
-.menu-primary-menu-container .primary-button:after {
-  display: none;
 }
 
 .menu-toggle {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 999;
   border: 0;
   font-size: 0;
   background: 0;
 }
-@media (min-width: 1024px) {
-  .menu-toggle {
-    display: none;
-  }
-}
 .menu-toggle:after {
-  content: "\f0c9";
-  position: absolute;
-  right: 24px;
-  top: 8px;
+  content: "\f550";
   font-family: fontawesome;
-  font-size: 30px;
-  color: #000000;
+  font-size: 40px;
+  color: #EAAA23;
 }
-
-html.active .menu-toggle:after {
+.menu-toggle.active:after {
   content: "\f00d";
-  position: relative;
-  z-index: 999;
-  margin-top: 8vh;
-  color: #000000;
+  font-family: fontawesome;
 }
 
 .page-template-page-no-builder .entry-content {
@@ -939,7 +834,7 @@ html.active .menu-toggle:after {
 .single-post .nav-links {
   display: flex;
   justify-content: space-between;
-  color: #000000;
+  color: #555555;
   font-family: "Source Sans 3", sans-serif;
 }
 .single-post .nav-previous .nav-title:before {
@@ -995,7 +890,7 @@ html.active .menu-toggle:after {
   max-width: 100%;
   padding-bottom: 4px;
   border: 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #555555;
   font-family: "Fraunces", serif;
 }
 @media (min-width: 768px) {
@@ -1007,7 +902,7 @@ html.active .menu-toggle:after {
 .search-submit {
   margin-left: 16px;
   border: 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #555555;
   text-transform: uppercase;
   font-family: "Source Sans 3", sans-serif;
   background: 0;
@@ -1037,7 +932,7 @@ html.active .menu-toggle:after {
 .search-results article {
   margin-bottom: 64px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #555555;
 }
 @media (min-width: 768px) {
   .search-results article {
@@ -1138,6 +1033,7 @@ html.active .menu-toggle:after {
 .faq-block__answer {
   display: none;
   padding: 0 30px 28px;
+  font-size: 1.2rem;
 }
 
 .hero-block {
@@ -1332,8 +1228,17 @@ html.active .menu-toggle:after {
   margin: 0 auto 16px;
 }
 .one-column-block__heading.font-size--large {
-  font-size: clamp(2rem, 6vw, 8rem);
+  font-size: clamp(2.4rem, 6vw, 8rem);
   line-height: 1;
+}
+.one-column-block__description {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .one-column-block__description {
+    font-size: 1.2rem;
+  }
 }
 .one-column-block__description.description-width--small {
   max-width: 480px;
@@ -1351,15 +1256,9 @@ html.active .menu-toggle:after {
 .one-column-block__description h1, .one-column-block__description h2, .one-column-block__description h3, .one-column-block__description h4, .one-column-block__description h5 {
   margin: 24px 0 8px;
 }
-.one-column-block__description p {
-  font-size: clamp(1rem, 5vw, 1.2rem);
-  line-height: 1.2;
-}
 .one-column-block__description li {
   margin: 0 0 8px 16px;
   list-style-type: disc;
-  font-size: 1.4rem;
-  line-height: 1.2;
 }
 .one-column-block__button.button-alignment--center {
   width: fit-content;
@@ -1582,7 +1481,7 @@ html.active .menu-toggle:after {
 }
 .three-column-block__heading {
   margin-bottom: 40px;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.8rem, 2vw, 2rem);
   line-height: 1;
   text-transform: uppercase;
   text-align: center;

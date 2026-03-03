@@ -1,180 +1,84 @@
 @use '../base/globals' as *;
 
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+  height: 100%;
+}
+
 .site-header {
-  @include container;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__wrapper {
-
+  &__logo {
     display: none;
-
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    width: 100%;
-
-    &.scrolled {
-      background-color: $canvas;
-      transition: background-color .2s ease-in-out;
-    }
   }
 
-  &__logo {
-    height: 40px;
-    object-fit: contain;
-    margin: 8px 0 0;
+  &__heading {
+    margin-top: 2vh;
+    font-size: 38px;
+    line-height: 46px;
+    color: $charcoal;
+    font-style: italic;
+
+    @include respond-up(small){
+      font-size: 88px;
+      line-height: 96px;
+    }
   }
 
   .main-navigation {
-    @include respond-up(large){
-      width: 80%;
-      display: flex;
-      justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100vh;
+    padding: 120px 40px 40px;
+    background: $ink;
+    transform: translateY(-100%);
+    transition: transform .2s ease-in-out;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include respond-up(small){
+      padding: 120px 8vw 48px 28vw;
     }
   }
 
-  .menu {
-    @include respond-up(large){
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      column-gap: 64px;
-    }
-
-    li {
-      position: relative;
-      color: $black;
-      font-size: 24px;
-
-      @include respond-up(large){
-        margin: 0;
-        font-size: 18px;
-      }
-
-      &:hover {
-        color: $black;
-      }
-
-      &:hover:after {
-        @include respond-up(large){
-          content: '';
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 24px;
-          margin-top: 4px;
-          background-image: url('https://pikexdigital.com/wp-content/uploads/2025/12/underline_black.png');
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-      }
-    }
-
-    li:last-of-type:hover:after {
-      @include respond-up(large){
-        display: none;
-      }
-    }
-  }
-}
-
-.menu-primary-menu-container {
-  @include flex-center;
-  position: absolute;
-  top: 48px;
-  left: 100%;
-  width: 100%;
-  height: 100vh;
-  padding: 64px 40px;
-  background-color: $canvas;
-  transition: left .4s;
-
-  @include respond-up(large){
-    justify-content: flex-end;
-  }
-    
-  @include respond-up(large){
-    position: unset;
-    height: unset;
-    padding: unset;
-    transition: unset;
-    background-color: unset;
-  }
-
-  html.active & {
-    top: 48px; 
-    left: 0;
-  }
-
-  li {
-    margin-bottom: 64px;
-
-    @include respond-up(large){
-      margin-bottom: unset;
-    }
-
-    &:after {
-      content: '';
-      display: inline-block;
-      width: 50px;
-      height: 12px;
-      margin-left: 4px;
-      background-image: url('https://pikexdigital.com/wp-content/uploads/2025/12/arrow_right_black.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      transition: margin 0.3s ease-in-out;
-
-      @include respond-up(large){
-        display: none;
-      }
-    }
-
-    &:hover:after {
-      margin-left: 12px;
-    }  
-  }
-
-  a {
-    @include respond-up(large){
-      font-size: 18px !important;
+  &.active {
+    .main-navigation {
+      transform: translateY(0);
     }
   }
 
-  .primary-button:after {
-    display: none;
+  .main-navigation li {
+    margin-bottom: 32px;
+    color: $ember;
+    font-size: 24px;
+
+    @include respond-up(small){
+      font-size: 48px;
+    }
   }
 }
 
 .menu-toggle {
-  border: 0;  
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 999;
+  border: 0;
   font-size: 0;
   background: 0;
 
-  @include respond-up(large){
-    display: none;
-  }
-
   &:after {
-    content: '\f0c9';
-    position: absolute;
-    right: 24px;
-    top: 8px;
+    content: '\f550';
     font-family: fontawesome;
-    font-size: 30px;
-    color: $black;
+    font-size: 40px;
+    color: $ember;
   }
-}
 
-html.active .menu-toggle {
-  &:after {
-    content: '\f00d';
-    position: relative;
-    z-index: 999;
-    margin-top: 8vh;
-    color: $black;
-  } 
+  &.active:after {
+    content:'\f00d';
+    font-family: fontawesome;
+  }
 }

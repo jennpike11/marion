@@ -30,7 +30,7 @@ if( have_rows('hero_block') ):
 
       <?php if($button): ?>
         <div class="hero-block__button">
-          <a class="primary-button background-color--<?php echo $buttonColor ?>" href="<?php echo esc_url($button['url']); ?>">
+          <a class="primary-button button-color--<?php echo $buttonColor ?>" href="<?php echo esc_url($button['url']); ?>">
             <?php echo esc_html($button['title']); ?>
           </a>
         </div>

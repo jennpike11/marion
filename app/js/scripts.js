@@ -1,16 +1,38 @@
 (function ($) {
  
   // Mobile Menu
-  $('.menu-toggle').on('click', function () {
-    if ($('.site-header__wrapper').hasClass('active')) {
-      $('.site-header__wrapper').removeClass('active');
-      $('.menu-toggle').removeClass('active');
-      $('.site-header__wrapper').hide(200);
-    } else {
-      $('.site-header__wrapper').show(200);
-      $('.site-header__wrapper').addClass('active');
-      $('.menu-toggle').addClass('active');
-    }
+  var $header = $('.site-header');
+  var $toggle = $('.menu-toggle');
+
+  function openMenu() {
+    $header.addClass('active');
+    $toggle.addClass('active').attr('aria-expanded', 'true');
+    $('html, body').addClass('menu-open');
+  }
+
+  function closeMenu() {
+    $header.removeClass('active');
+    $toggle.removeClass('active').attr('aria-expanded', 'false');
+    $('html, body').removeClass('menu-open');
+  }
+
+  function isMenuOpen() {
+    return $header.hasClass('active');
+  }
+
+  $toggle.on('click', function (e) {
+    e.preventDefault();
+    isMenuOpen() ? closeMenu() : openMenu();
+  });
+
+  // Close on ESC
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && isMenuOpen()) closeMenu();
+  });
+
+  // Optional: close when a menu link is clicked
+  $('.main-navigation').on('click', 'a', function () {
+    if (isMenuOpen()) closeMenu();
   });
 
   // Load More Button - Posts from the Category Page 
@@ -33,20 +55,8 @@
 
 
   // Rooms Slider
-  $('.rooms-block__carousel').slick({  
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    arrows: false,
-    dots: true,
-    cssEase: 'linear',
-    pauseOnHover: true,
-    pauseOnFocus: true,
-  });
-
-  // Rooms Carousel
-  $(function(){
-    $('.rooms-block__carousel').slick({  
+  if ($.fn.slick && $('.rooms-block__carousel').length && !$('.rooms-block__carousel').hasClass('slick-initialized')) {
+    $('.rooms-block__carousel').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
@@ -56,7 +66,7 @@
       pauseOnHover: true,
       pauseOnFocus: true,
     });
-  });  
+  }
 
 
 // Carousel Block Slider + Hover Scrub
@@ -80,7 +90,7 @@ $(function () {
         swipe: true,
         touchMove: true,
         swipeToSlide: true,
-        speed: 650,
+        speed: 450,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 3 } },
           { breakpoint: 768, settings: { slidesToShow: 2 } },

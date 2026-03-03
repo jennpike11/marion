@@ -20,12 +20,19 @@
     }
 
     &.font-size--large {
-      font-size: clamp(2rem, 6vw, 8rem);
+      font-size: clamp(2.4rem, 6vw, 8rem);
       line-height: 1;
     }
   } 
 
   &__description {
+    font-size: 1rem;
+    line-height: 1.4;
+
+    @include respond-up(small){
+      font-size: 1.2rem;
+    }
+
     &.description-width--small {
       max-width: 480px;
       margin: 0 auto 16px;
@@ -44,16 +51,9 @@
       margin: 24px 0 8px;
     }
 
-    p {
-      font-size: clamp(1rem, 5vw, 1.2rem);
-      line-height: 1.2;
-    }
-
     li {
       margin: 0 0 8px 16px;
       list-style-type: disc;
-      font-size: 1.4rem;
-      line-height: 1.2;
     }
   }
 

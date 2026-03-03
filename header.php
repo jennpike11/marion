@@ -20,11 +20,10 @@
 	<?php wp_head(); ?>
 </head>
 
-</head>
-
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prc-theme' ); ?></button>
 	<header id="masthead" class="site-header__wrapper">
 		<div class="site-header">
 			<a href="/">
@@ -33,15 +32,15 @@
 				<?php } ?>
 			</a>
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prc-theme' ); ?></button>
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'primary-menu',
 						'menu_id'        => 'primary-menu',
 					)
 				);
 				?>
+				<div class="site-header__heading">Your stay, your way.</div>
 			</nav><!-- #site-navigation -->
 		</div>	
 	</header><!-- #masthead -->
