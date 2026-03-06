@@ -152,7 +152,7 @@
 .frm_style_formidable-style.with_frm_style .frm_submit button:active,
 .frm_style_formidable-style.with_frm_style .frm_submit button:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #4F7098);
+  background-color: rgb(100.12, 129.16, 164.36);
 }
 
 .primary-button.button-color--canvas {
@@ -160,7 +160,7 @@
 }
 .primary-button.button-color--canvas:hover, .primary-button.button-color--canvas:active, .primary-button.button-color--canvas:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #E6C08B);
+  background-color: rgb(233, 199.56, 152.92);
 }
 
 .primary-button.button-color--ember {
@@ -168,7 +168,7 @@
 }
 .primary-button.button-color--ember:hover, .primary-button.button-color--ember:active, .primary-button.button-color--ember:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #EAAA23);
+  background-color: rgb(236.52, 180.2, 61.4);
 }
 
 .primary-button.button-color--clay {
@@ -176,7 +176,7 @@
 }
 .primary-button.button-color--clay:hover, .primary-button.button-color--clay:active, .primary-button.button-color--clay:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #B98C78);
+  background-color: rgb(193.4, 153.8, 136.2);
 }
 
 .primary-button.button-color--sage {
@@ -184,7 +184,7 @@
 }
 .primary-button.button-color--sage:hover, .primary-button.button-color--sage:active, .primary-button.button-color--sage:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #CF8732);
+  background-color: rgb(212.76, 149.4, 74.6);
 }
 
 .primary-button.button-color--ink {
@@ -192,7 +192,7 @@
 }
 .primary-button.button-color--ink:hover, .primary-button.button-color--ink:active, .primary-button.button-color--ink:focus-visible {
   color: #ffffff;
-  background-color: color-mix(in oklch, white 12%, #979CAD);
+  background-color: rgb(163.48, 167.88, 182.84);
 }
 
 .read-more {
@@ -304,6 +304,7 @@ a, a:hover {
 }
 
 li {
+  margin-bottom: 4px;
   list-style-type: none;
   list-style-position: inside;
   font-size: inherit;
@@ -425,6 +426,9 @@ img {
 }
 .background-color--ink {
   background-color: #979CAD;
+}
+.background-color--white {
+  background-color: #ffffff;
 }
 
 .color--black {
@@ -1108,6 +1112,11 @@ body.menu-open {
 .hero-block__spacer {
   height: 44vh;
 }
+@media (min-width: 1024px) {
+  .hero-block__spacer {
+    height: 60vh;
+  }
+}
 .hero-block__spacer.height--1 {
   height: 100vh;
 }
@@ -1397,42 +1406,42 @@ body.menu-open {
   background-color: #E6C08B;
 }
 .rooms-block__room.color--canvas .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #E6C08B);
+  background-color: rgb(233, 199.56, 152.92);
 }
 
 .rooms-block__room.color--ember .rooms-block__button .primary-button {
   background-color: #EAAA23;
 }
 .rooms-block__room.color--ember .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #EAAA23);
+  background-color: rgb(236.52, 180.2, 61.4);
 }
 
 .rooms-block__room.color--clay .rooms-block__button .primary-button {
   background-color: #B98C78;
 }
 .rooms-block__room.color--clay .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #B98C78);
+  background-color: rgb(193.4, 153.8, 136.2);
 }
 
 .rooms-block__room.color--sage .rooms-block__button .primary-button {
   background-color: #CF8732;
 }
 .rooms-block__room.color--sage .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #CF8732);
+  background-color: rgb(212.76, 149.4, 74.6);
 }
 
 .rooms-block__room.color--harbor .rooms-block__button .primary-button {
   background-color: #4F7098;
 }
 .rooms-block__room.color--harbor .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #4F7098);
+  background-color: rgb(100.12, 129.16, 164.36);
 }
 
 .rooms-block__room.color--ink .rooms-block__button .primary-button {
   background-color: #979CAD;
 }
 .rooms-block__room.color--ink .rooms-block__button .primary-button:hover {
-  background-color: color-mix(in oklch, white 12%, #979CAD);
+  background-color: rgb(163.48, 167.88, 182.84);
 }
 
 .spacer-block--single {
@@ -1555,6 +1564,28 @@ body.menu-open {
 .two-column-block.column-alignment--top .column {
   align-items: flex-start;
 }
+@media (min-width: 768px) {
+  .two-column-block.column-layout--left-narrow .column:first-of-type {
+    width: 30%;
+  }
+}
+@media (min-width: 768px) {
+  .two-column-block.column-layout--left-narrow .column:last-of-type {
+    width: 70%;
+    padding-left: 120px;
+  }
+}
+@media (min-width: 768px) {
+  .two-column-block.column-layout--right-narrow .column:first-of-type {
+    width: 70%;
+    padding-right: 120px;
+  }
+}
+@media (min-width: 768px) {
+  .two-column-block.column-layout--right-narrow .column:last-of-type {
+    width: 30%;
+  }
+}
 .two-column-block .column {
   display: flex;
   justify-content: center;
@@ -1574,6 +1605,7 @@ body.menu-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 4px;
 }
 .two-column-block .column__heading {
   margin: 16px 0;
@@ -1591,6 +1623,9 @@ body.menu-open {
 }
 .two-column-block .primary-button {
   margin-top: 32px;
+}
+.two-column-block li {
+  list-style-type: disc;
 }
 
 /*# sourceMappingURL=main-styles.css.map*/

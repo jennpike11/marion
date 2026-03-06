@@ -1,16 +1,15 @@
-// Functions
-@function tint($color, $percent, $space: oklch) {
-  @return color-mix(
-    in #{$space},
-    white #{$percent},
-    #{$color}
-  );
+@use "sass:math";
+@use "sass:color";
+@use "./variables" as *;
+
+@function div($a, $b) {
+  @return math.div($a, $b);
 }
 
-@function shade($color, $percent, $space: oklch) {
-  @return color-mix(
-    in #{$space},
-    black #{$percent},
-    #{$color}
-  );
+@function tint($color, $percentage) {
+  @return color.mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return color.mix(black, $color, $percentage);
 }

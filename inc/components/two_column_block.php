@@ -2,6 +2,7 @@
    if( have_rows('two_column_block') ): 
    while( have_rows('two_column_block') ): the_row(); 
    $verticalPadding = get_sub_field('vertical_padding'); 
+   $columnLayout = get_sub_field('column_layout');
    $columnAlignment = get_sub_field('column_alignment'); 
    $backgroundColor = get_sub_field('background_color');
    $textColor = get_sub_field('text_color');
@@ -17,7 +18,7 @@
 ?>
 
 <section class="two-column-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
-   <div class="two-column-block column-alignment--<?php echo $columnAlignment ?>">   
+   <div class="two-column-block column-layout--<?php echo $columnLayout ?> column-alignment--<?php echo $columnAlignment ?>">   
       <div class="column column--one">
          <?php if( $imageOne ): ?>
             <div class="column__image">

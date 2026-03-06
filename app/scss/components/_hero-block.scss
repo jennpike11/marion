@@ -77,6 +77,10 @@
   &__spacer {
     height: calc(60vh - 16vh);
 
+    @include respond-up(large){
+      height: 60vh;
+    }
+
     &.height--1 {
         height: 100vh;
     }

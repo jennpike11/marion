@@ -9,16 +9,20 @@
 
   <section class="faq-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
 		<div class="faq-block">
-			<h2 class="faq-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
-			<?php  while( have_rows('questions_and_answers') ): the_row(); 
-      $question = get_sub_field('question');
-      $answer = get_sub_field('answer');
+      <?php if($heading): ?>
+			  <h2 class="faq-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
+      <?php endif; ?>
+      <?php if( have_rows('questions_and_answers') ): 
+        while( have_rows('questions_and_answers') ): the_row(); 
+        $question = get_sub_field('question');
+        $answer = get_sub_field('answer');
       ?>
 			<div class="faq-block__item">
 				<h3 class="faq-block__question color--<?php echo $textColor ?>"><?php echo $question ?><span class="arrow"></span></h3>
 				<div class="faq-block__answer color--<?php echo $textColor ?>"><?php echo $answer ?></div>
 			</div>
       <?php endwhile; ?>
+      <?php endif; ?>
 		</div>
 	</section>	
 
