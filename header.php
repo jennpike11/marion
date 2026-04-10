@@ -26,21 +26,26 @@
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prc-theme' ); ?></button>
 	<header id="masthead" class="site-header__wrapper">
 		<div class="site-header">
-			<a href="/">
 				<?php if (has_custom_logo()) { ?>
 					<img class="site-header__logo" src="<?php echo esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
 				<?php } ?>
 			</a>
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary-menu',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-				<div class="site-header__heading">Your stay, your way.</div>
+			<nav class="main-navigation">
+				<div class="main-navigation__inner">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary-menu',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+					<div class="divider"></div>
+					<div class="main-navigation__content">
+						<div class="main-navigation__image"><img src="https://dev-marion.pikexdigital.com/wp-content/uploads/2026/04/breakfast_in_bed.jpg"></div>
+						<div class="main-navigation__text">Your stay, your way.</div>
+					</div>
+				</div>
 			</nav><!-- #site-navigation -->
 		</div>	
 	</header><!-- #masthead -->

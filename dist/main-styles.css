@@ -287,7 +287,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.5rem, 1.1rem + 1vw, 2rem);
+  font-size: clamp(1.5rem, 1.1rem + 1vw, 1.6rem);
 }
 
 p {
@@ -684,38 +684,108 @@ body.menu-open {
     line-height: 96px;
   }
 }
-.site-header .main-navigation {
-  display: flex;
-  flex-direction: column;
+.site-header.active .main-navigation {
+  transform: translateY(0);
+}
+
+.main-navigation {
   position: fixed;
   inset: 0;
   z-index: 900;
-  width: 100%;
   height: 100vh;
-  padding: 120px 40px 40px;
-  background: #979CAD;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #e7e1d9 0%, #c2c7d2 55%, #979cad 100%);
   transform: translateY(-100%);
   transition: transform 0.2s ease-in-out;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 @media (min-width: 768px) {
-  .site-header .main-navigation {
-    padding: 120px 8vw 48px 28vw;
+  .main-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: unset;
   }
 }
-.site-header.active .main-navigation {
-  transform: translateY(0);
-}
-.site-header .main-navigation li {
-  margin-bottom: 32px;
-  color: #EAAA23;
-  font-size: 24px;
+.main-navigation__inner {
+  width: calc(100% - 56px);
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-width: 768px) {
-  .site-header .main-navigation li {
+  .main-navigation__inner {
+    width: calc(100% - 64px);
+  }
+}
+@media (min-width: 1280px) {
+  .main-navigation__inner {
+    width: 100%;
+  }
+}
+.main-navigation__inner {
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .main-navigation__inner {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.main-navigation__image {
+  max-width: 400px;
+  height: 480px;
+}
+@media (min-width: 1024px) {
+  .main-navigation__image {
+    max-width: 480px;
+  }
+}
+.main-navigation__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-navigation__text {
+  font-size: 40px;
+  color: #555555;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .main-navigation__text {
     font-size: 48px;
   }
+}
+.main-navigation .divider {
+  width: 100%;
+  height: 1px;
+  background: #555555;
+  margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .main-navigation .divider {
+    display: block;
+    width: 1px;
+    height: 100%;
+    margin-bottom: unset;
+  }
+}
+.main-navigation li {
+  margin-bottom: 32px;
+  color: #555555;
+  font-size: 24px;
+  text-transform: uppercase;
+  transition: color 0.2s linear;
+}
+@media (min-width: 1024px) {
+  .main-navigation li {
+    font-size: 40px;
+  }
+}
+.main-navigation li:hover {
+  color: #EAAA23;
 }
 
 .menu-toggle {
@@ -1011,6 +1081,7 @@ body.menu-open {
   max-width: 900px;
 }
 .faq-block__heading {
+  margin-bottom: 32px;
   text-align: center;
 }
 .faq-block__item:last-child {
@@ -1037,7 +1108,7 @@ body.menu-open {
 .faq-block__answer {
   display: none;
   padding: 0 30px 28px;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .hero-block {
@@ -1194,22 +1265,20 @@ body.menu-open {
 .one-column-block {
   overflow: hidden;
 }
+.one-column-block.column-width--small {
+  max-width: 640px;
+}
+.one-column-block.column-width--medium {
+  max-width: 1024px;
+}
 .one-column-block__heading {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   text-align: center;
   text-transform: uppercase;
 }
-.one-column-block__heading.heading-width--small {
-  max-width: 800px;
-  margin: 0 auto 16px;
-}
-.one-column-block__heading.heading-width--medium {
-  max-width: 1024px;
-  margin: 0 auto 16px;
-}
 .one-column-block__heading.font-size--large {
   font-size: clamp(2.4rem, 6vw, 8rem);
-  line-height: 1;
+  line-height: 0.88;
 }
 .one-column-block__description {
   font-size: 1rem;
@@ -1222,16 +1291,16 @@ body.menu-open {
 }
 .one-column-block__description.description-width--small {
   max-width: 480px;
-  margin: 0 auto 16px;
+  margin: auto;
 }
 @media (min-width: 1024px) {
   .one-column-block__description.description-width--small {
-    max-width: 800px;
+    max-width: 560px;
   }
 }
 .one-column-block__description.description-width--medium {
-  max-width: 1024px;
-  margin: 16px auto;
+  max-width: 800px;
+  margin: auto;
 }
 .one-column-block__description h1, .one-column-block__description h2, .one-column-block__description h3, .one-column-block__description h4, .one-column-block__description h5 {
   margin: 24px 0 8px;

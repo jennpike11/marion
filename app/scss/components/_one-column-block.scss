@@ -4,24 +4,22 @@
   @include container;
   overflow: hidden;
 
+  &.column-width--small {
+    max-width: 640px;
+  }
+
+  &.column-width--medium {
+    max-width: 1024px;
+  }
+
   &__heading {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     text-align: center;
     text-transform: uppercase;
 
-    &.heading-width--small {
-      max-width: 800px;
-      margin: 0 auto 16px;
-    }
-
-    &.heading-width--medium {
-      max-width: 1024px;
-      margin: 0 auto 16px;
-    }
-
     &.font-size--large {
       font-size: clamp(2.4rem, 6vw, 8rem);
-      line-height: 1;
+      line-height: .88;
     }
   } 
 
@@ -35,16 +33,16 @@
 
     &.description-width--small {
       max-width: 480px;
-      margin: 0 auto 16px;
+      margin: auto;
 
       @include respond-up(large){
-        max-width: 800px;
+        max-width: 560px;
       }
     }
 
     &.description-width--medium {
-      max-width: 1024px;
-      margin: 16px auto;
+      max-width: 800px;
+      margin: auto;
     }
 
     h1, h2, h3, h4, h5 {

@@ -5,6 +5,7 @@
   max-width: 900px;
 
   &__heading {
+    margin-bottom: 32px;
     text-align: center;
   }
 
@@ -39,6 +40,6 @@
   &__answer {
     display: none;
     padding: 0 30px 28px;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }

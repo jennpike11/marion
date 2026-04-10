@@ -5,7 +5,7 @@
     $verticalPadding = get_sub_field('vertical_padding');
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
-    $headingWidth = get_sub_field('heading_width');
+    $columnWidth = get_sub_field('column_width');
     $heading = get_sub_field('heading'); 
     $headingSize = get_sub_field('heading_size'); 
     $descriptionWidth = get_sub_field('description_width');
@@ -16,7 +16,7 @@
   ?>
 
 <section class="one-column-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
-  <div class="one-column-block heading-width--<?php echo $headingWidth ?>">
+  <div class="one-column-block column-width--<?php echo $columnWidth ?>">
     <?php if($heading): ?>
       <h2 class="one-column-block__heading font-size--<?php echo $headingSize ?> color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
     <?php endif; ?>  
