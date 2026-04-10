@@ -15,6 +15,12 @@
         }
     }
 
+    &.column-layout--equal {
+        .column__heading, .column__description {
+            max-width: 560px;
+        }
+    }
+
     &.column-layout--left-narrow {
         .column:first-of-type {
             @include respond-up(small){
