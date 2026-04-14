@@ -77,20 +77,19 @@
     if (!$carousels.length || !$.fn.slick) return;
     $carousels.each(function () {
       var $carousel = $(this);
-
-      // Init slick once
       if (!$carousel.hasClass('slick-initialized')) {
         $carousel.slick({
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           arrows: false,
-          dots: false,
+          dots: true,
           draggable: true,
           swipe: true,
           touchMove: true,
           swipeToSlide: true,
-          speed: 450,
+          speed: 600,
+          cssEase: 'ease',
           responsive: [{
             breakpoint: 1024,
             settings: {
@@ -109,30 +108,10 @@
           }]
         });
       }
-
-      // Hover scrub behavior
-      var rafId = null;
-      var targetIndex = null;
-      var lastIndex = null;
-      var isPointerDown = false;
-      function update() {
-        rafId = null;
-        if (targetIndex === null) return;
-        if (targetIndex === lastIndex) return;
-
-        // true = don't animate every tiny move too aggressively
-        $carousel.slick('slickGoTo', targetIndex, true);
-        lastIndex = targetIndex;
-      }
-      function queueUpdate() {
-        if (rafId) return;
-        rafId = requestAnimationFrame(update);
-      }
-
-      // Use the slick-list as the hover area (this is the visible viewport)
       var $hoverArea = $carousel.closest('.slick-slider').find('.slick-list');
-
-      // Track pointer down so we don't fight the existing drag behavior
+      var lastDirection = null;
+      var hoverTimeout = null;
+      var isPointerDown = false;
       $hoverArea.on('mousedown touchstart', function () {
         isPointerDown = true;
       });
@@ -140,29 +119,33 @@
         isPointerDown = false;
       });
       $hoverArea.on('mousemove', function (e) {
-        if (isPointerDown) return; // let drag do its thing
-
-        var slick = $carousel.slick('getSlick');
-        if (!slick) return;
-        var slideCount = slick.slideCount;
-        if (!slideCount) return;
+        if (isPointerDown) return;
         var rect = this.getBoundingClientRect();
         var x = e.clientX - rect.left;
-        var pct = x / rect.width;
+        var width = rect.width;
+        clearTimeout(hoverTimeout);
 
-        // Clamp 0..1
-        if (pct < 0) pct = 0;
-        if (pct > 1) pct = 1;
-
-        // Map mouse position to slide index
-        targetIndex = Math.round(pct * (slideCount - 1));
-        queueUpdate();
+        // Left third = previous, right third = next, middle = do nothing
+        if (x < width * 0.33) {
+          if (lastDirection !== 'prev') {
+            $carousel.slick('slickPrev');
+            lastDirection = 'prev';
+          }
+        } else if (x > width * 0.66) {
+          if (lastDirection !== 'next') {
+            $carousel.slick('slickNext');
+            lastDirection = 'next';
+          }
+        } else {
+          lastDirection = null;
+        }
+        hoverTimeout = setTimeout(function () {
+          lastDirection = null;
+        }, 250);
       });
       $hoverArea.on('mouseleave', function () {
-        targetIndex = null;
-        lastIndex = null;
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = null;
+        clearTimeout(hoverTimeout);
+        lastDirection = null;
       });
     });
   });
@@ -182,6 +165,97 @@
     });
   });
 })(jQuery);
+
+// Load Google Maps API
+(function () {
+  var script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBJjLdM2BGzorjmodPPoXpfGtC5eVAzbzQ';
+  script.async = true;
+  script.defer = true;
+  script.onload = function () {
+    initMap();
+  };
+  document.head.appendChild(script);
+})();
+function initMap() {
+  var mapEl = document.getElementById('property-map');
+  if (!mapEl) return;
+  var hotel = {
+    lat: 39.650656,
+    lng: -104.972286
+  };
+  var swedish = {
+    lat: 39.652280,
+    lng: -104.983550
+  };
+  var craig = {
+    lat: 39.647650,
+    lng: -104.984200
+  };
+  var map = new google.maps.Map(mapEl, {
+    center: {
+      lat: 39.6498,
+      lng: -104.972286
+    },
+    zoom: 15,
+    disableDefaultUI: true,
+    zoomControl: true,
+    gestureHandling: 'greedy',
+    styles: [{
+      featureType: 'all',
+      elementType: 'geometry',
+      stylers: [{
+        color: '#efefef'
+      }]
+    }, {
+      featureType: 'poi',
+      stylers: [{
+        visibility: 'off'
+      }]
+    }, {
+      featureType: 'transit',
+      stylers: [{
+        visibility: 'off'
+      }]
+    }, {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{
+        color: '#ffffff'
+      }]
+    }]
+  });
+
+  // HOTEL
+  var hotelMarker = new google.maps.Marker({
+    position: hotel,
+    map: map,
+    title: 'Marion Hotel'
+  });
+  new google.maps.InfoWindow({
+    content: '<div class="map-info-window">Marion Hotel</div>'
+  }).open(map, hotelMarker);
+
+  // SWEDISH MEDICAL CENTER
+  var swedishMarker = new google.maps.Marker({
+    position: swedish,
+    map: map,
+    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+  });
+  new google.maps.InfoWindow({
+    content: '<div class="map-info-window">Swedish Medical Center</div>'
+  }).open(map, swedishMarker);
+
+  // CRAIG HOSPITAL
+  var craigMarker = new google.maps.Marker({
+    position: craig,
+    map: map,
+    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+  });
+  new google.maps.InfoWindow({
+    content: '<div class="map-info-window">Craig Hospital</div>'
+  }).open(map, craigMarker);
+}
 
 /***/ },
 

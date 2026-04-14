@@ -14,12 +14,25 @@
         $image = get_sub_field('image');
       ?>
 			<div class="three-column-block__column background-color--<?php echo $backgroundColor ?>">
-        <h2 class="three-column-block__heading"><?php echo $heading ?></h2>
-        <div class="three-column-block__image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></div>
-        <div class="three-column-block__text">
-          <h3 class="three-column-block__subheading"><?php echo $subheading ?></h3>
-          <div class="three-column-block__description"><?php echo $description ?></div>
-        </div>
+        <?php if($heading): ?>
+          <h2 class="three-column-block__heading"><?php echo $heading ?></h2>
+        <?php endif; ?>
+
+        <?php if($image): ?>
+          <div class="three-column-block__image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></div>
+        <?php endif; ?>
+
+        <?php if($subheading || $description): ?>
+          <div class="three-column-block__text">
+            <?php if($subheading): ?>
+              <h3 class="three-column-block__subheading"><?php echo $subheading ?></h3>
+            <?php endif; ?>
+
+            <?php if($description): ?>
+              <div class="three-column-block__description"><?php echo $description ?></div>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
 			</div>
       <?php endwhile; ?>
       <?php endif; ?>

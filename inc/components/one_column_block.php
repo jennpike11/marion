@@ -9,6 +9,7 @@
     $heading = get_sub_field('heading'); 
     $headingSize = get_sub_field('heading_size'); 
     $descriptionWidth = get_sub_field('description_width');
+    $textSize = get_sub_field('description_text_size');
     $description = get_sub_field('description');
     $buttonAlignment = get_sub_field('button_alignment');
     $buttonColor = get_sub_field('button_color');
@@ -22,7 +23,7 @@
     <?php endif; ?>  
 
     <?php if($description): ?>
-      <div class="one-column-block__description description-width--<?php echo $descriptionWidth ?> color--<?php echo $textColor ?>"><?php echo $description ?></div>
+      <div class="one-column-block__description description-width--<?php echo $descriptionWidth ?> font-size--<?php echo $textSize ?> color--<?php echo $textColor ?>"><?php echo $description ?></div>
     <?php endif; ?> 
 
     <?php if($button): ?>

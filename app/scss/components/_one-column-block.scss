@@ -27,7 +27,7 @@
     font-size: 1rem;
     line-height: 1.4;
 
-    @include respond-up(small){
+    &.font-size--larger {
       font-size: 1.2rem;
     }
 
@@ -58,11 +58,12 @@
   &__button {
     &.button-alignment--center {
       width: fit-content;
-      margin: auto;
+      margin: 40px auto 0;
     }
 
     &.button-alignment--right {
       width: fit-content;
+      margin-top: 40px;
       margin-left: auto;
     }
   }
