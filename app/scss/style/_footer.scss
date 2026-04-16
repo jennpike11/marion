@@ -73,10 +73,10 @@
 
   .wp-block-column:first-of-type {
     align-self: center;
-  }
 
-  .wp-block-column:last-of-type {
-    flex: 1.8;
+    @include respond-up(small){
+      flex: 1.6;
+    }
   }
 
   .wp-block-image img {
@@ -90,9 +90,13 @@
     flex-direction: column;
     align-items: center;
 
-    @include respond-up(medium){
-      display: unset;
+    @include respond-up(small){
+      align-items: unset;
     }
+  }
+
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+    flex-basis: unset !important;
   }
 }
 
@@ -112,10 +116,6 @@
   ul {
     column-count: 2;
     column-gap: 32px;
-
-    @include respond-up(small){
-      column-count: 3;
-    }
   }
 
   li {
