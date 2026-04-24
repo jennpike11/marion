@@ -1,13 +1,28 @@
-// @font-face {
-//   font-family: "WorkSans-Light.woff";
-//   src: url("https://prontomc.co.uk//wp-content/themes/prc-theme/app/font/WorkSans-Light.woff");
-// }
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url("https://dev-marion.pikexdigital.com/wp-content/themes/prc-theme/app/font/Poppins-ExtraLight.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Playfair-Display";
-//   src: url("https://prontomc.co.uk//wp-content/themes/prc-theme/app/font/playfair-display.woff");
-// }
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("https://dev-marion.pikexdigital.com/wp-content/themes/prc-theme/app/font/Poppins-Regular.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("https://dev-marion.pikexdigital.com/wp-content/themes/prc-theme/app/font/Poppins-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
 
-// tentative fonts
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("https://dev-marion.pikexdigital.com/wp-content/themes/prc-theme/app/font/Poppins-Bold.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+

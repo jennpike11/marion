@@ -1,0 +1,128 @@
+@use '../base/globals' as *;
+
+// Background colors for sections, buttons, etc
+.background-color {
+  &--midnight-navy {
+    background-color: $midnight-navy;
+  }  
+
+  &--warm-white {
+    background-color: $warm-white;
+  }  
+
+  &--coral-pink {
+    background-color: $coral-pink;
+  }
+
+  &--rust-orange {
+    background-color: $rust-orange;
+  }
+
+  &--terracotta {
+    background-color: $terracotta;
+  }
+
+  &--sky-blue {
+    background-color: $sky-blue;
+  }
+
+  &--peach-glow {
+    background-color: $peach-glow;
+  }
+
+  &--lavender-mist {
+    background-color: $lavender-mist;
+  }  
+
+  &--deep-plum {
+    background-color: $deep-plum;
+  }  
+
+  &--ochre {
+    background-color: $ochre;
+  }  
+
+  &--sage-green {
+    background-color: $sage-green;
+  }  
+
+  &--slate-blue {
+    background-color: $slate-blue;
+  }  
+
+  &--turquoise {
+    background-color: $turquoise;
+  }  
+
+  &--white {
+    background-color: $white;
+  }
+
+  &--black {
+    background-color: $black;
+  }  
+}
+
+
+// Font color options
+.color {
+  &--midnight-navy {
+    color: $midnight-navy;
+  }
+
+  &--warm-white {
+    color: $warm-white;
+  }
+
+  &--coral-pink {
+    color: $coral-pink;
+  }
+
+  &--rust-orange {
+    color: $rust-orange;
+  }
+
+  &--terracotta {
+    color: $terracotta;
+  }
+
+  &--sky-blue {
+    color: $sky-blue;
+  }
+
+  &--peach-glow {
+    color: $peach-glow;
+  }
+
+  &--lavender-mist {
+    color: $lavender-mist;
+  }
+
+  &--deep-plum {
+    color: $deep-plum;
+  }
+
+  &--ochre {
+    color: $ochre;
+  }
+
+  &--sage-green {
+    color: $sage-green;
+  }
+
+  &--slate-blue {
+    color: $slate-blue;
+  }
+
+  &--turquoise {
+    color: $turquoise;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+  }
+}

@@ -2,7 +2,7 @@
 
 .archive, .category, .search-results {
   .category-header {
-    background: $canvas;
+    background: $peach-glow;
 
     img {
         width: 100%;
@@ -34,8 +34,8 @@
   .read-more {
     margin: 16px 0 8px;
     padding-bottom: 8px;
-    border-bottom: 1px solid $charcoal;
-    color: $charcoal;
+    border-bottom: 1px solid $midnight-navy;
+    color: $midnight-navy;
   }
 }
 

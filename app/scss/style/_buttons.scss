@@ -13,7 +13,7 @@
   font-family: $font-primary;
   font-size: 16px;
   font-weight: bold;
-  background-color: $harbor;
+  background-color: $slate-blue;
   cursor: pointer;
   transition: background-color 0.4s ease-in-out;
 
@@ -21,62 +21,62 @@
   &:active,
   &:focus-visible {
     color: $white;
-    background-color: tint($harbor, 12%);
+    background-color: tint($slate-blue, 12%);
   }
 }
 
 .primary-button.button-color--canvas {
-    background-color: $canvas;
+    background-color: $peach-glow;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($canvas, 12%);
+    background-color: tint($peach-glow, 12%);
     }
 }
 
 .primary-button.button-color--ember {
-    background-color: $ember;
+    background-color: $ochre;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($ember, 12%);
+    background-color: tint($ochre, 12%);
     }
 }
 
 .primary-button.button-color--clay {
-    background-color: $clay;
+    background-color: $coral-pink;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($clay, 12%);
+    background-color: tint($coral-pink, 12%);
     }
 }
 
 .primary-button.button-color--sage {
-    background-color: $sage;
+    background-color: $rust-orange;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($sage, 12%);
+    background-color: tint($rust-orange, 12%);
     }
 }
 
 .primary-button.button-color--ink {
-    background-color: $ink;
+    background-color: $lavender-mist;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($ink, 12%);
+    background-color: tint($lavender-mist, 12%);
     }
 }
 
@@ -84,7 +84,7 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-    color: $charcoal;
+    color: $midnight-navy;
 
     &:after {
         content: '\f30b';

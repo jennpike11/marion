@@ -35,7 +35,6 @@
 
   &__title {
     margin-top: 32px;
-    text-transform: uppercase;
 
     @include respond-up(small){
       margin-top: 48px;
@@ -68,98 +67,98 @@
 
 // Match Slick Dots to Text Color
 .rooms-block__room.color--canvas .slick-dots button {
-  border-color: $canvas;
+  border-color: $peach-glow;
 }
 
 .rooms-block__room.color--canvas .slick-dots .slick-active button {
-  background-color: $canvas;
+  background-color: $peach-glow;
 }
 
 .rooms-block__room.color--ember .slick-dots button {
-  border-color: $ember;
+  border-color: $ochre;
 }
 
 .rooms-block__room.color--ember .slick-dots .slick-active button {
-  background-color: $ember;
+  background-color: $ochre;
 }
 
 .rooms-block__room.color--clay .slick-dots button {
-  border-color: $clay;
+  border-color: $coral-pink;
 }
 
 .rooms-block__room.color--clay .slick-dots .slick-active button {
-  background-color: $clay;
+  background-color: $coral-pink;
 }
 
 .rooms-block__room.color--sage .slick-dots button {
-  border-color: $sage;
+  border-color: $rust-orange;
 }
 
 .rooms-block__room.color--sage .slick-dots .slick-active button {
-  background-color: $sage;
+  background-color: $rust-orange;
 }
 
 .rooms-block__room.color--harbor .slick-dots button {
-  border-color: $harbor;
+  border-color: $slate-blue;
 }
 
 .rooms-block__room.color--harbor .slick-dots .slick-active button {
-  background-color: $harbor;
+  background-color: $slate-blue;
 }
 
 .rooms-block__room.color--ink .slick-dots button {
-  border-color: $ink;
+  border-color: $lavender-mist;
 }
 
 .rooms-block__room.color--ink .slick-dots .slick-active button {
-  background-color: $ink;
+  background-color: $lavender-mist;
 }
 
 // Match Primary Button Color to Text and Dots
 .rooms-block__room.color--canvas .rooms-block__button .primary-button {
-  background-color: $canvas;
+  background-color: $peach-glow;
 
   &:hover {
-    background-color: tint($canvas, 12%);
+    background-color: tint($peach-glow, 12%);
   }
 }
 
 .rooms-block__room.color--ember .rooms-block__button .primary-button {
-  background-color: $ember;
+  background-color: $ochre;
 
   &:hover {
-    background-color: tint($ember, 12%);
+    background-color: tint($ochre, 12%);
   }
 }
 
 .rooms-block__room.color--clay .rooms-block__button .primary-button {
-  background-color: $clay;
+  background-color: $coral-pink;
 
   &:hover {
-    background-color: tint($clay, 12%);
+    background-color: tint($coral-pink, 12%);
   }
 }
 
 .rooms-block__room.color--sage .rooms-block__button .primary-button {
-  background-color: $sage;
+  background-color: $rust-orange;
 
   &:hover {
-    background-color: tint($sage, 12%);
+    background-color: tint($rust-orange, 12%);
   }
 }
 
 .rooms-block__room.color--harbor .rooms-block__button .primary-button {
-  background-color: $harbor;
+  background-color: $slate-blue;
 
   &:hover {
-    background-color: tint($harbor, 12%);
+    background-color: tint($slate-blue, 12%);
   }
 }
 
 .rooms-block__room.color--ink .rooms-block__button .primary-button {
-  background-color: $ink;
+  background-color: $lavender-mist;
 
   &:hover {
-    background-color: tint($ink, 12%);
+    background-color: tint($lavender-mist, 12%);
   }
 }

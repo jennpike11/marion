@@ -25,7 +25,6 @@
     margin-bottom: 40px;
     font-size: clamp(1.8rem, 2vw, 2rem);
     line-height: 1;
-    text-transform: uppercase;
     text-align: center;
     color: $white;
   }
@@ -54,7 +53,6 @@
   &__subheading {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1;
-    text-transform: uppercase;
     text-align: center;
     color: $white;
   }
