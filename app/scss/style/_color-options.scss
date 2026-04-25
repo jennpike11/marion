@@ -11,7 +11,7 @@
   }  
 
   &--coral-pink {
-    background-color: $coral-pink;
+    background-color: tint($coral-pink, 20%);
   }
 
   &--rust-orange {

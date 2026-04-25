@@ -4,6 +4,7 @@
     $verticalPadding = get_sub_field('vertical_padding'); 
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
+    $buttonColor = get_sub_field('button_color');
   ?>
 
   <section class="rooms-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
@@ -30,7 +31,7 @@
           <div class="rooms-block__description color--<?php echo $textColor ?>"><?php echo $roomDescription ?></div>
           <?php if ($roomButton): ?>
             <div class="rooms-block__button">
-              <a class="primary-button"
+              <a class="primary-button button-color--<?php echo $buttonColor ?>"
                 href="<?php echo esc_url($roomButton['url']); ?>"
                 target="<?php echo esc_attr($roomButton['target'] ?: '_self'); ?>">
                 <?php echo esc_html($roomButton['title']); ?>

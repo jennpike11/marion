@@ -9,34 +9,18 @@
 
 (function ($) {
   // Mobile Menu
-  var $header = $('.site-header');
-  var $toggle = $('.menu-toggle');
-  function openMenu() {
-    $header.addClass('active');
-    $toggle.addClass('active').attr('aria-expanded', 'true');
-    $('html, body').addClass('menu-open');
-  }
-  function closeMenu() {
-    $header.removeClass('active');
-    $toggle.removeClass('active').attr('aria-expanded', 'false');
-    $('html, body').removeClass('menu-open');
-  }
-  function isMenuOpen() {
-    return $header.hasClass('active');
-  }
-  $toggle.on('click', function (e) {
-    e.preventDefault();
-    isMenuOpen() ? closeMenu() : openMenu();
+  $(window).scroll(function () {
+    if ($(window).scrollTop() >= 10) {
+      $('.site-header__wrapper').addClass('scrolled');
+      $('nav div').addClass('visible-title');
+    } else {
+      $('.site-header__wrapper').removeClass('scrolled');
+    }
   });
 
-  // Close on ESC
-  $(document).on('keydown', function (e) {
-    if (e.key === 'Escape' && isMenuOpen()) closeMenu();
-  });
-
-  // Optional: close when a menu link is clicked
-  $('.main-navigation').on('click', 'a', function () {
-    if (isMenuOpen()) closeMenu();
+  // Stop scroll when menu open
+  $('.menu-toggle').click(function () {
+    $('html').toggleClass('active');
   });
 
   // Load More Button - Posts from the Category Page 

@@ -7,3 +7,24 @@
 .wpforms-submit {
 	min-width: 100%;
 }
+
+
+.page-id-590 .two-column-block {
+	.column {
+		@include respond-up(small){
+			flex-direction: row;
+			max-height: 640px;
+			overflow: hidden;
+		}
+	}
+
+	.column--two:before {
+		@include respond-up(small){
+			content: '';
+			width: 1px;
+			height: 100vh;
+			margin-right: 80px;
+			background-color: $black;
+		}
+	}
+}

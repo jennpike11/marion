@@ -2,89 +2,168 @@
 
 .primary-button,
 .load-more,
-.frm_style_formidable-style.with_frm_style .frm_submit button {
+.frm_style_formidable-style.with_frm_style .frm_submit button,
+div.wpforms-container-full button[type=submit] {
   @include flex-center;
   width: fit-content;
   min-width: 160px;
   height: 48px;
   padding: 0 16px;
-  border-radius: 24px;
+  border-radius: 24px !important;
   color: $white;
   font-family: $font-primary;
   font-size: 16px;
   font-weight: bold;
-  background-color: $slate-blue;
-  cursor: pointer;
+  background-color: $turquoise;
+  cursor: pointer !important;
   transition: background-color 0.4s ease-in-out;
 
   &:hover,
   &:active,
   &:focus-visible {
     color: $white;
-    background-color: tint($slate-blue, 12%);
+    background-color: tint($turquoise, 20%);
   }
 }
 
-.primary-button.button-color--canvas {
-    background-color: $peach-glow;
+.primary-button.button-color--midnight-navy {
+    background-color: $midnight-navy;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($peach-glow, 12%);
+    background-color: tint($midnight-navy, 20%);
     }
 }
 
-.primary-button.button-color--ember {
-    background-color: $ochre;
-
-    &:hover,
-    &:active,
-    &:focus-visible {
-    color: $white;
-    background-color: tint($ochre, 12%);
-    }
-}
-
-.primary-button.button-color--clay {
+.primary-button.button-color--coral-pink {
     background-color: $coral-pink;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($coral-pink, 12%);
+    background-color: tint($coral-pink, 20%);
     }
 }
 
-.primary-button.button-color--sage {
+.primary-button.button-color--rust-orange {
     background-color: $rust-orange;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($rust-orange, 12%);
+    background-color: tint($rust-orange, 20%);
     }
 }
 
-.primary-button.button-color--ink {
+.primary-button.button-color--terracotta {
+    background-color: $terracotta;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($terracotta, 20%);
+    }
+}
+
+.primary-button.button-color--sky-blue {
+    background-color: $sky-blue;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($sky-blue, 20%);
+    }
+}
+
+.primary-button.button-color--peach-glow {
+    background-color: $peach-glow;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($peach-glow, 20%);
+    }
+}
+
+.primary-button.button-color--lavender-mist {
     background-color: $lavender-mist;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($lavender-mist, 12%);
+    background-color: tint($lavender-mist, 20%);
     }
 }
+
+.primary-button.button-color--deep-plum {
+    background-color: $deep-plum;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($deep-plum, 20%);
+    }
+}
+
+.primary-button.button-color--ochre {
+    background-color: $ochre;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($ochre, 20%);
+    }
+}
+
+.primary-button.button-color--sage-green {
+    background-color: $sage-green;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($sage-green, 20%);
+    }
+}
+
+.primary-button.button-color--slate-blue {
+    background-color: $slate-blue;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($slate-blue, 20%);
+    }
+}
+
+.primary-button.button-color--turquoise {
+    background-color: $turquoise;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($turquoise, 20%);
+    }
+}
+
 
 .read-more {
     display: flex;
     align-items: center;
     font-size: 16px;
-    color: $midnight-navy;
+    color: $coral-pink;
 
     &:after {
         content: '\f30b';
