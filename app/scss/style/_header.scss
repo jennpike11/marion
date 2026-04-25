@@ -60,14 +60,14 @@
     align-items: center;
     height: 80px;
   }
-}
 
-ul {
-  @include respond-up(large) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 64px;
+  ul {
+    @include respond-up(large) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 64px;
+    }
   }
 
   li {

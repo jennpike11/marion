@@ -862,36 +862,35 @@ img {
     height: 80px;
   }
 }
-
 @media (min-width: 1024px) {
-  ul {
+  .main-navigation ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     column-gap: 64px;
   }
 }
-ul li {
+.main-navigation li {
   position: relative;
   color: #e88b8b;
   font-size: 24px;
 }
 @media (min-width: 1024px) {
-  ul li {
+  .main-navigation li {
     margin: 0;
     font-size: 18px;
   }
 }
-ul li:nth-of-type(4n + 1):hover {
+.main-navigation li:nth-of-type(4n + 1):hover {
   color: #b5593e;
 }
-ul li:nth-of-type(4n + 2):hover {
+.main-navigation li:nth-of-type(4n + 2):hover {
   color: #fcb813;
 }
-ul li:nth-of-type(4n + 3):hover {
+.main-navigation li:nth-of-type(4n + 3):hover {
   color: #A8B087;
 }
-ul li:nth-of-type(4n + 4):hover {
+.main-navigation li:nth-of-type(4n + 4):hover {
   color: #4a3d5e;
 }
 
