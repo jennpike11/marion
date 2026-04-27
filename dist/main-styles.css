@@ -1519,7 +1519,7 @@ html.active .site-overlay {
   text-align: center;
 }
 .one-column-block__heading.font-size--large {
-  font-size: clamp(2.4rem, 6vw, 6rem);
+  font-size: clamp(2.4rem, 6vw, 5.6rem);
   line-height: 1;
 }
 .one-column-block__description {
