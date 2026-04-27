@@ -33,12 +33,13 @@
 		<div class="site-header">
 			<nav id="site-navigation" class="main-navigation">
 				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary-menu',
+					'menu_id'        => 'primary-menu',
+					'fallback_cb'    => false,
+				)
+			);
 				?>
 			</nav><!-- #site-navigation -->
 		</div>	

@@ -789,38 +789,22 @@ img {
   }
 }
 
-.site-header__wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .site-header__wrapper.scrolled .site-header {
-    top: 0;
-  }
-}
-
 .site-header {
   position: fixed;
-  top: -100%;
-  left: 0;
+  top: 0;
+  left: -100%;
   width: 100%;
   min-height: 100vh;
   background-color: #f5f0e8;
-  transition: top 0.6s ease-in-out;
+  transition: left 0.6s ease-in-out;
 }
 @media (min-width: 768px) {
   .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: unset;
+    width: 16.4%;
   }
 }
 .active .site-header {
-  top: 0;
+  left: 0;
 }
 .site-header__logo {
   display: block;
@@ -830,56 +814,34 @@ img {
 }
 @media (min-width: 768px) {
   .site-header__logo {
-    position: absolute;
-    top: 16px;
-    left: 16px;
+    position: fixed;
+    top: 32px;
+    left: 40px;
     z-index: 9;
     margin-top: 0;
   }
 }
+.site-header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .main-navigation {
-  width: calc(100% - 56px);
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 768px) {
-  .main-navigation {
-    width: calc(100% - 64px);
-  }
-}
-@media (min-width: 1280px) {
-  .main-navigation {
-    width: 100%;
-  }
-}
-@media (min-width: 1024px) {
-  .main-navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 80px;
-  }
+  margin: 140px 40px 0;
 }
 @media (min-width: 1024px) {
   .main-navigation ul {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    column-gap: 64px;
+    row-gap: 56px;
   }
 }
 .main-navigation li {
   position: relative;
   color: #e88b8b;
-  font-size: 24px;
-}
-@media (min-width: 1024px) {
-  .main-navigation li {
-    margin: 0;
-    font-size: 18px;
-  }
+  font-size: 20px;
 }
 .main-navigation li:nth-of-type(4n + 1):hover {
   color: #b5593e;
@@ -895,27 +857,24 @@ img {
 }
 
 .menu-toggle {
+  position: fixed;
+  top: 32px;
+  right: 40px;
+  z-index: 999;
   border: 0;
   font-size: 0;
-  background: none;
+  background: 0;
 }
-@media (min-width: 1024px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-.menu-toggle::after {
-  content: "\f0c9";
-  position: absolute;
-  top: 8px;
-  right: 24px;
+.menu-toggle:after {
+  content: "\f550";
   font-family: fontawesome;
-  font-size: 30px;
-  color: #f5f0e8;
+  font-size: 40px;
+  color: #fcb813;
 }
 
-.active .menu-toggle::after {
+.active .menu-toggle:after {
   content: "\f00d";
+  font-family: fontawesome;
 }
 
 .page-template-page-no-builder .entry-content {
