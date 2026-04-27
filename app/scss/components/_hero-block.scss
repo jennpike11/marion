@@ -5,16 +5,28 @@
   width: 100%;
   height: 100%;
 
+  &__section {
+    position: relative;
+    height: 64vh;
+    overflow: clip;
+    clip-path: inset(0);
+    z-index: 0;
+
+    &.height--1 {
+      height: 100vh;
+    }
+  }
+
   &__wrapper {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: auto;
     width: 100vw;
-    height: 60vh;
+    height: 64vh;
     overflow: hidden;
     z-index: -10;
+    pointer-events: none;
 
     &.height--1 {
       height: 100vh;
@@ -26,24 +38,37 @@
     inset: 0;
     will-change: transform;
 
-  img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(.6);
-    transform: scale(1.06);
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.6);
+      transform: scale(1.06);
     }
   }
 
   &__content-wrapper {
     @include flex-center;
-    position: absolute;
-    inset: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 64vh;
     padding: 24px;
     text-align: center;
+    z-index: 1;
+
+    &.height--1 {
+      height: 100vh;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 11;
   }
 
   &__heading {
@@ -63,31 +88,18 @@
   &__description {
     max-width: 560px;
     margin: 32px auto 0;
-    font-size: clamp(1rem, 5vw, 1.4rem);
-    line-height: 1.1;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    line-height: 1.4;
   }
 
   &__button {
     width: fit-content;
     margin: 40px auto 0;
-    pointer-events: auto;
-  }
-
-  &__spacer {
-    height: calc(60vh - 16vh);
-
-    @include respond-up(large){
-      height: 60vh;
-    }
-
-    &.height--1 {
-        height: 100vh;
-    }
   }
 }
 
 
-// Parallax
+// PARALLAX
 @supports (animation-timeline: scroll()) {
 
   .hero-block__image {
@@ -125,16 +137,24 @@
   }
 }
 
-// For 60vh size
+
+// 64vh variant
 .hero-block__wrapper:not(.height--1) .hero-block__image {
-  animation-name: heroParallaxImage60 !important;
+  animation-name: heroParallaxImage64 !important;
 }
 
-@keyframes heroParallaxImage60 {
+@keyframes heroParallaxImage64 {
   from {
     transform: translate3d(0, 0vh, 0) scale(1.06);
   }
   to {
     transform: translate3d(0, -16vh, 0) scale(1.22);
   }
+}
+
+
+.hero-block__section ~ section,
+.hero-block__section ~ div {
+  position: relative;
+  z-index: 2;
 }

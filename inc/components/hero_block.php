@@ -11,21 +11,26 @@ if( have_rows('hero_block') ):
     $buttonColor = get_sub_field('button_color');
 ?>
 
-<section class="hero-block__wrapper height--<?php echo $homePage ?>" data-component="hero-block">
-  <div class="hero-block">
+<section class="hero-block__section height--<?php echo $homePage ?>" data-component="hero-block">
 
-    <div class="hero-block__image" aria-hidden="true">
-      <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['title']); ?>" decoding="async">
+  <div class="hero-block__wrapper height--<?php echo $homePage ?>">
+    <div class="hero-block">
+      <div class="hero-block__image" aria-hidden="true">
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['title']); ?>" decoding="async">
+      </div>
     </div>
+  </div>
 
-  <div class="hero-block__content-wrapper">
+  <div class="hero-block__content-wrapper height--<?php echo $homePage ?>">
     <div class="hero-block__content">
       <h1 class="hero-block__heading color--<?php echo $textColor ?>">
         <?php echo $heading; ?>
       </h1>
 
       <?php if($description): ?>
-        <div class="hero-block__description color--white"><?php echo $description; ?></div>
+        <div class="hero-block__description color--white">
+          <?php echo $description; ?>
+        </div>
       <?php endif; ?>
 
       <?php if($button): ?>
@@ -38,10 +43,7 @@ if( have_rows('hero_block') ):
     </div>
   </div>
 
-  </div>
 </section>
-
-<div class="hero-block__spacer height--<?php echo $homePage ?>" aria-hidden="true"></div>
 
 <?php endwhile; ?>
 <?php endif; ?>
