@@ -47,8 +47,8 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
-      arrows: false,
-      dots: true,
+      arrows: true,
+      dots: false,
       cssEase: 'linear',
       pauseOnHover: true,
       pauseOnFocus: true

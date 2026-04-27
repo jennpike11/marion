@@ -331,7 +331,7 @@ html {
   scroll-behavior: smooth;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  z-index: 0;
+  z-index: 1;
   font-weight: 300;
 }
 html.active {
@@ -1284,7 +1284,7 @@ html.active .site-overlay {
 .hero-block__heading {
   max-width: 500px;
   margin: auto;
-  font-size: clamp(2.4rem, 5vw, 5.5rem);
+  font-size: clamp(2.4rem, 5vw, 5rem);
   line-height: 1.1;
   letter-spacing: 0.02em;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -1620,66 +1620,52 @@ html.active .site-overlay {
     margin-top: 48px;
   }
 }
-.rooms-block .slick-dots {
-  display: flex;
-  margin-top: 8px;
+.rooms-block .slick-slider {
+  position: relative;
 }
-.rooms-block .slick-dots button {
-  width: 16px;
-  height: 16px;
-  margin-right: 2px;
-  border: 1px solid #555555;
-  border-radius: 50%;
+.rooms-block .slick-prev {
+  border: unset;
+  background: unset;
   font-size: 0;
-  cursor: pointer;
 }
-
-.rooms-block__room.color--canvas .slick-dots button {
-  border-color: #f5b896;
+.rooms-block .slick-prev:before {
+  content: "\f177";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  padding: 0 8px;
+  border: 1px solid #222222;
+  border-radius: 24px;
+  font-size: 24px;
+  font-family: fontawesome;
+  color: #222222;
+  background-color: #cccccc;
+  transition: background-color 0.2s ease-in-out;
 }
-
-.rooms-block__room.color--canvas .slick-dots .slick-active button {
-  background-color: #f5b896;
+.rooms-block .slick-prev:hover:before {
+  background-color: rgb(214.2, 214.2, 214.2);
 }
-
-.rooms-block__room.color--ember .slick-dots button {
-  border-color: #fcb813;
+.rooms-block .slick-next {
+  border: unset;
+  background: unset;
+  font-size: 0;
 }
-
-.rooms-block__room.color--ember .slick-dots .slick-active button {
-  background-color: #fcb813;
+.rooms-block .slick-next:before {
+  content: "\f178";
+  position: absolute;
+  bottom: -16px;
+  left: 48px;
+  padding: 0 8px;
+  border: 1px solid #222222;
+  border-radius: 24px;
+  font-size: 24px;
+  font-family: fontawesome;
+  color: #222222;
+  background-color: #cccccc;
+  transition: background-color 0.2s ease-in-out;
 }
-
-.rooms-block__room.color--clay .slick-dots button {
-  border-color: #e88b8b;
-}
-
-.rooms-block__room.color--clay .slick-dots .slick-active button {
-  background-color: #e88b8b;
-}
-
-.rooms-block__room.color--sage .slick-dots button {
-  border-color: #c96e3f;
-}
-
-.rooms-block__room.color--sage .slick-dots .slick-active button {
-  background-color: #c96e3f;
-}
-
-.rooms-block__room.color--harbor .slick-dots button {
-  border-color: #4a6584;
-}
-
-.rooms-block__room.color--harbor .slick-dots .slick-active button {
-  background-color: #4a6584;
-}
-
-.rooms-block__room.color--ink .slick-dots button {
-  border-color: #c5bdd4;
-}
-
-.rooms-block__room.color--ink .slick-dots .slick-active button {
-  background-color: #c5bdd4;
+.rooms-block .slick-next:hover:before {
+  background-color: rgb(214.2, 214.2, 214.2);
 }
 
 .rooms-block__room.color--canvas .rooms-block__button .primary-button {
