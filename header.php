@@ -44,3 +44,4 @@
 			</nav><!-- #site-navigation -->
 		</div>	
 	</header><!-- #masthead -->
+	<div class="site-overlay"></div>

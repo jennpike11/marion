@@ -4,12 +4,19 @@
   position: fixed;
   top: 0;
   left: -100%;
+  z-index: 9;
   width: 100%;
-  min-height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: $warm-white;
   transition: left 0.6s ease-in-out;
 
   @include respond-up(small) { 
+    width: 33%;
+  }
+
+  @include respond-up(xlarge) { 
     width: 16.4%;
   }
 
@@ -18,17 +25,14 @@
   }
 
   &__logo {
-    display: block;
+    position: fixed;
+    top: 32px;
+    left: 16px;
+    z-index: 999;
     height: 48px;
-    margin-top: 8px;
-    object-fit: contain;
 
-    @include respond-up(small) {
-      position: fixed;
-      top: 32px;
+    @include respond-up(small){
       left: 40px;
-      z-index: 9;
-      margin-top: 0;
     }
 
     img {
@@ -40,14 +44,21 @@
 }
 
 .main-navigation {
-  margin: 140px 40px 0;
+  padding: 140px 40px 48px;
+  margin: 0;
 
   ul {
-    @include respond-up(large) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      row-gap: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 56px;
+  }
+
+  @media (max-height: 520px) {
+    padding-top: 110px;
+
+    ul {
+      row-gap: 28px;
     }
   }
 
@@ -74,6 +85,23 @@
   }
 }
 
+.site-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 8;
+}
+
+html.active .site-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .menu-toggle {
   position: fixed;
   top: 32px;
@@ -92,6 +120,6 @@
 }
 
 .active .menu-toggle:after {
-    content:'\f00d';
-    font-family: fontawesome;
-  }
+  content:'\f00d';
+  font-family: fontawesome;
+}
