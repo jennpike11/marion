@@ -20,7 +20,7 @@
 
 // Container
 @mixin container {
-  width: calc(100% - 56px);
+  width: calc(100% - 40px);
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;

@@ -146,6 +146,46 @@
       }
     });
   });
+
+  // Hero Parallax Fallback for Firefox (no doc ready wrapper)
+
+  if (!CSS.supports('animation-timeline: scroll()')) {
+    const $heroImages = jQuery('.hero-block__image');
+    const $heroContent = jQuery('.hero-block__content-wrapper');
+    if ($heroImages.length) {
+      let ticking = false;
+      function updateHeroParallax() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        $heroImages.each(function (index) {
+          const $image = jQuery(this);
+          const $section = $image.closest('.hero-block__section');
+          if (!$section.length) return;
+          const sectionTop = $section.offset().top;
+          const sectionHeight = $section.outerHeight();
+          const progress = Math.min(Math.max((scrollY - sectionTop) / sectionHeight, 0), 1);
+
+          // IMAGE movement (matches your CSS)
+          const moveYImage = progress * -16;
+
+          // CONTENT movement (matches your CSS)
+          const moveYContent = progress * -44;
+          $image.css('transform', 'translate3d(0, ' + moveYImage + 'vh, 0) scale(1.10)');
+
+          // match content to same section index
+          const $content = $heroContent.eq(index);
+          $content.css('transform', 'translate3d(0, ' + moveYContent + 'vh, 0)');
+        });
+        ticking = false;
+      }
+      jQuery(window).on('scroll resize', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeroParallax);
+          ticking = true;
+        }
+      });
+      updateHeroParallax();
+    }
+  }
 })(jQuery);
 
 // Load Google Maps API

@@ -92,11 +92,15 @@
     }
 
     .primary-button {
-        margin-top: 32px;
+        margin: 32px auto 0;
+
+        @include respond-up(small){
+            margin: 32px 0 0;
+        }
     }
 
     li {
-        margin-bottom: 8px;
+        margin: 0 0 12px 12px;
         list-style-type: disc;
         list-style-position: unset;
     }

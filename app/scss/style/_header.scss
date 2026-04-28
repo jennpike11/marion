@@ -9,7 +9,7 @@
   height: 100dvh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: $warm-white;
+  background-color: $midnight-navy;
   transition: left 0.6s ease-in-out;
 
   @include respond-up(small) { 
@@ -25,14 +25,17 @@
   }
 
   &__logo {
+    display: block;
     position: fixed;
-    top: 32px;
-    left: 16px;
+    top: 8px;
+    left: 8px;
     z-index: 999;
-    height: 48px;
+    height: 56px;
 
     @include respond-up(small){
+      top: 16px;
       left: 16px;
+      height: 80px;
     }
 
     img {
@@ -44,8 +47,12 @@
 }
 
 .main-navigation {
-  padding: 140px 40px 48px;
+  padding: 120px 40px 48px;
   margin: 0;
+
+  @include respond-up(small){
+    padding: 140px 40px 48px;
+  }
 
   ul {
     display: flex;
@@ -65,11 +72,11 @@
   li {
     position: relative;
     color: $coral-pink;
-    font-size: 20px;
+    font-size: 24px;
   }
 
   li:nth-of-type(4n + 1):hover {
-    color: $terracotta;
+    color: $peach-glow;
   }
 
   li:nth-of-type(4n + 2):hover {
@@ -81,7 +88,7 @@
   }
 
   li:nth-of-type(4n + 4):hover {
-    color: $deep-plum;
+    color: $lavender-mist;
   }
 }
 
@@ -104,18 +111,27 @@ html.active .site-overlay {
 
 .menu-toggle {
   position: fixed;
-  top: 32px;
-  right: 40px;
+  top: 8px;
+  right: 8px;
   z-index: 999;
   border: 0;
   font-size: 0;
   background: 0;
 
+  @include respond-up(small){
+    top: 16px;
+    right: 16px;
+  }
+
   &:after {
     content: '\f550';
     font-family: fontawesome;
-    font-size: 40px;
+    font-size: 32px;
     color: $ochre;
+
+    @include respond-up(small){
+      font-size: 40px;
+    }
   }
 }
 

@@ -10,12 +10,14 @@
   }
 
   &__item {
+    margin-bottom: 32px;
+
     &:last-child {
       margin-bottom: 0;
     }
 
     &.active {
-      .faq-block__title:after {
+      .faq-block__question:after {
         content: "\f106";
       }
     }
@@ -24,22 +26,22 @@
   &__question {
     @include flex-between;
     align-items: center;
-    padding: 27px 60px 26px 30px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-family: $font-primary;
     cursor: pointer;
 
     &:after {
       content: "\f107";
       font-size: 26px;
       font-family: 'FontAwesome';
-      font-weight: 400;
     }
   }
 
   &__answer {
     display: none;
-    padding: 0 30px 28px;
-    font-size: 1.05rem;
+    padding-bottom: 32px;
+  }
+
+  .arrow {
+    margin-left: 12px;
   }
 }
