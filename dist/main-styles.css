@@ -808,7 +808,7 @@ img {
 }
 @media (min-width: 1280px) {
   .site-header {
-    width: 16.4%;
+    width: 16%;
   }
 }
 .active .site-header {
@@ -823,7 +823,7 @@ img {
 }
 @media (min-width: 768px) {
   .site-header__logo {
-    left: 40px;
+    left: 16px;
   }
 }
 .site-header__logo img {

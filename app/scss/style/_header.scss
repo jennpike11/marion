@@ -17,7 +17,7 @@
   }
 
   @include respond-up(xlarge) { 
-    width: 16.4%;
+    width: 16%;
   }
 
   .active & {
@@ -32,7 +32,7 @@
     height: 48px;
 
     @include respond-up(small){
-      left: 40px;
+      left: 16px;
     }
 
     img {

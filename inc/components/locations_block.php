@@ -19,8 +19,12 @@ if ( have_rows('locations_block') ) :
       <div class="locations-block__description"><?php echo $description ?></div>
     <?php endif; ?>
 
-    <?php if ( $map == 1 ) : ?>
+    <?php if ( $map == 'amenities' ) : ?>
       <div id="property-map" class="locations-block__location"></div>
+    <?php endif; ?>
+
+    <?php if ( $map == 'hospitals' ) : ?>
+      <div id="hospital-map" class="locations-block__location"></div>
     <?php endif; ?>
   </div>
 
