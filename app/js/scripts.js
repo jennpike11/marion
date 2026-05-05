@@ -1,8 +1,8 @@
 (function ($) {
  
-  // Mobile Menu
+  // Fix menu
   $(window).scroll(function () {
-    if ($(window).scrollTop() >= 10) {
+    if ($(window).scrollTop() >= 320) {
       $('.site-header__wrapper').addClass('scrolled');
       $('nav div').addClass('visible-title');
     } else {
@@ -14,6 +14,7 @@
   $('.menu-toggle').click(function () {
     $('html').toggleClass('active');  
   });  
+  
   
 
   // Load More Button - Posts from the Category Page 
