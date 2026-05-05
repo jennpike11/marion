@@ -13,7 +13,9 @@ div.wpforms-container-full button[type=submit] {
   color: $white;
   font-family: $font-primary;
   font-size: 16px;
+  line-height: 1.1;
   font-weight: bold;
+  text-align: center;
   background-color: $turquoise;
   cursor: pointer !important;
   transition: background-color 0.4s ease-in-out;

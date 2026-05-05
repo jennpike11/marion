@@ -33,31 +33,55 @@
     }
   }
 
-  .slick-dots {
-    position: static;
-    margin-top: 24px;
-    display: flex !important;
-    justify-content: center;
-    gap: 10px;
-    padding: 0;
-    list-style: none;
+  .slick-prev {
+    border: unset;
+    background: unset;
+    font-size: 0;
 
-    li {
-      margin: 0;
+    &:before {
+      content: '\f177';
+      position: absolute;
+      bottom: -16px;
+      left: calc(50% - 40px);
+      padding: 0 8px;
+      border: 1px solid $black;
+      border-radius: 24px;
+      font-size: 24px;
+      font-family: fontawesome;
+      color: $black;
+      background-color: #cccccc;
+      cursor: pointer;
+      transition: background-color .2s ease-in-out;
+    }
 
-      button {
-        width: 12px;
-        height: 12px;
-        padding: 0;
-        border: 1px solid $midnight-navy;
-        border-radius: 50%;
-        background: transparent;
-        font-size: 0;
-      }
+    &:hover:before {
+      background-color: tint(#cccccc, 40%);
+    }
+  }
 
-      &.slick-active button {
-        background: $midnight-navy;
-      }
+  .slick-next {
+    border: unset;
+    background: unset;
+    font-size: 0;
+
+    &:before {
+      content: '\f178';
+      position: absolute;
+      right: calc(50% - 44px);
+      bottom: -16px;
+      padding: 0 8px;
+      border: 1px solid $black;
+      border-radius: 24px;
+      font-size: 24px;
+      font-family: fontawesome;
+      color: $black;
+      background-color: #cccccc;
+      cursor: pointer;
+      transition: background-color .2s ease-in-out;
+    }
+
+    &:hover:before {
+      background-color: tint(#cccccc, 40%);
     }
   }
 }

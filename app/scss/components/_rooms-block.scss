@@ -59,22 +59,19 @@
     font-size: 0;
 
     &:before {
-      content: '\f177';
+      content: '';
       position: absolute;
-      bottom: -16px;
-      left: 0;
-      padding: 0 8px;
-      border: 1px solid $black;
-      border-radius: 24px;
-      font-size: 24px;
-      font-family: fontawesome;
-      color: $black;
-      background-color: #cccccc;
-      transition: background-color .2s ease-in-out;
+      top: 50%;
+      left: -12px;
+      z-index: 4;
+      width: 36px;
+      height: 36px;
+      background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_left.png) no-repeat;
+      background-size: contain;
     }
 
     &:hover:before {
-      background-color: tint(#cccccc, 20%);
+      color: tint($black, 10%);
     }
   }
 
@@ -84,22 +81,19 @@
     font-size: 0;
 
     &:before {
-      content: '\f178';
+      content: '';
       position: absolute;
-      bottom: -16px;
-      left: 48px;
-      padding: 0 8px;
-      border: 1px solid $black;
-      border-radius: 24px;
-      font-size: 24px;
-      font-family: fontawesome;
-      color: $black;
-      background-color: #cccccc;
-      transition: background-color .2s ease-in-out;
+      top: 50%;
+      right: -32px;
+      z-index: 4;
+      width: 36px;
+      height: 36px;
+      background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_right.png) no-repeat;
+      background-size: contain;
     }
 
     &:hover:before {
-      background-color: tint(#cccccc, 20%);
+      color: tint($black, 10%);
     }
   }
 } 

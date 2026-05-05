@@ -77,8 +77,9 @@
   }
 
   &__subheading {
+    max-width: 400px;
+    margin: 16px auto 0;
     font-size: 1.4rem;
-    text-align: center;
     color: $white;
   }
 

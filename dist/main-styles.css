@@ -160,7 +160,9 @@ div.wpforms-container-full button[type=submit] {
   color: #ffffff;
   font-family: "Poppins-ExtraLight", sans-serif;
   font-size: 16px;
+  line-height: 1.1;
   font-weight: bold;
+  text-align: center;
   background-color: #4dbcd9;
   cursor: pointer !important;
   transition: background-color 0.4s ease-in-out;
@@ -685,24 +687,6 @@ img {
 .site-footer__socials a:last-of-type:after {
   margin-right: unset;
 }
-.site-footer__legal {
-  padding: 12px;
-  border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-  background: #4a6584;
-}
-@media (min-width: 812px) {
-  .site-footer__legal {
-    font-size: 12px;
-  }
-}
-.site-footer__legal a, .site-footer__legal a:hover {
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
-}
 .site-footer p {
   margin-bottom: unset;
 }
@@ -726,7 +710,7 @@ img {
   }
 }
 .site-footer .wp-block-image img {
-  width: fit-content;
+  max-width: 300px;
   max-height: 96px !important;
   object-fit: contain;
 }
@@ -860,26 +844,8 @@ img {
 .site-header .menu li:hover {
   color: #e88b8b;
 }
-@media (min-width: 1024px) {
-  .site-header .menu li:hover:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 24px;
-    margin-top: 4px;
-    background-image: url("https://pikexdigital.com/wp-content/uploads/2025/12/underline_magenta.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
 .site-header .menu li a {
   font-family: "Poppins-ExtraLight", sans-serif;
-}
-@media (min-width: 1024px) {
-  .site-header .menu li:last-of-type:hover:after {
-    display: none;
-  }
 }
 
 .menu-primary-menu-container {
@@ -1211,29 +1177,51 @@ html.active .menu-toggle:after {
   object-fit: cover;
   display: block;
 }
-.carousel-block .slick-dots {
-  position: static;
-  margin-top: 24px;
-  display: flex !important;
-  justify-content: center;
-  gap: 10px;
-  padding: 0;
-  list-style: none;
-}
-.carousel-block .slick-dots li {
-  margin: 0;
-}
-.carousel-block .slick-dots li button {
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  border: 1px solid #2b2b3c;
-  border-radius: 50%;
-  background: transparent;
+.carousel-block .slick-prev {
+  border: unset;
+  background: unset;
   font-size: 0;
 }
-.carousel-block .slick-dots li.slick-active button {
-  background: #2b2b3c;
+.carousel-block .slick-prev:before {
+  content: "\f177";
+  position: absolute;
+  bottom: -16px;
+  left: calc(50% - 40px);
+  padding: 0 8px;
+  border: 1px solid #222222;
+  border-radius: 24px;
+  font-size: 24px;
+  font-family: fontawesome;
+  color: #222222;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.carousel-block .slick-prev:hover:before {
+  background-color: rgb(224.4, 224.4, 224.4);
+}
+.carousel-block .slick-next {
+  border: unset;
+  background: unset;
+  font-size: 0;
+}
+.carousel-block .slick-next:before {
+  content: "\f178";
+  position: absolute;
+  right: calc(50% - 44px);
+  bottom: -16px;
+  padding: 0 8px;
+  border: 1px solid #222222;
+  border-radius: 24px;
+  font-size: 24px;
+  font-family: fontawesome;
+  color: #222222;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.carousel-block .slick-next:hover:before {
+  background-color: rgb(224.4, 224.4, 224.4);
 }
 
 .faq-block {
@@ -1700,21 +1688,18 @@ html.active .menu-toggle:after {
   font-size: 0;
 }
 .rooms-block .slick-prev:before {
-  content: "\f177";
+  content: "";
   position: absolute;
-  bottom: -16px;
-  left: 0;
-  padding: 0 8px;
-  border: 1px solid #222222;
-  border-radius: 24px;
-  font-size: 24px;
-  font-family: fontawesome;
-  color: #222222;
-  background-color: #cccccc;
-  transition: background-color 0.2s ease-in-out;
+  top: 50%;
+  left: -12px;
+  z-index: 4;
+  width: 36px;
+  height: 36px;
+  background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_left.png) no-repeat;
+  background-size: contain;
 }
 .rooms-block .slick-prev:hover:before {
-  background-color: rgb(214.2, 214.2, 214.2);
+  color: rgb(56.1, 56.1, 56.1);
 }
 .rooms-block .slick-next {
   border: unset;
@@ -1722,21 +1707,18 @@ html.active .menu-toggle:after {
   font-size: 0;
 }
 .rooms-block .slick-next:before {
-  content: "\f178";
+  content: "";
   position: absolute;
-  bottom: -16px;
-  left: 48px;
-  padding: 0 8px;
-  border: 1px solid #222222;
-  border-radius: 24px;
-  font-size: 24px;
-  font-family: fontawesome;
-  color: #222222;
-  background-color: #cccccc;
-  transition: background-color 0.2s ease-in-out;
+  top: 50%;
+  right: -32px;
+  z-index: 4;
+  width: 36px;
+  height: 36px;
+  background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_right.png) no-repeat;
+  background-size: contain;
 }
 .rooms-block .slick-next:hover:before {
-  background-color: rgb(214.2, 214.2, 214.2);
+  color: rgb(56.1, 56.1, 56.1);
 }
 
 .rooms-block__room.color--canvas .rooms-block__button .primary-button {
@@ -1867,8 +1849,9 @@ html.active .menu-toggle:after {
   width: 100%;
 }
 .three-column-block__subheading {
+  max-width: 400px;
+  margin: 16px auto 0;
   font-size: 1.4rem;
-  text-align: center;
   color: #ffffff;
 }
 .three-column-block__description {
