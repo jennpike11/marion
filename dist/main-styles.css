@@ -659,6 +659,9 @@ img {
     width: 100%;
   }
 }
+.site-footer {
+  max-width: 100%;
+}
 .site-footer__wrapper {
   margin-top: auto;
   padding: 32px 0 0;
@@ -695,6 +698,11 @@ img {
   line-height: inherit;
   font-weight: inherit;
 }
+@media (min-width: 768px) {
+  .site-footer .wp-block-columns {
+    justify-content: space-between;
+  }
+}
 .site-footer .widget-area__wrapper {
   padding-bottom: 32px;
 }
@@ -704,14 +712,29 @@ img {
 .site-footer .wp-block-column:first-of-type {
   align-self: center;
 }
+@media (max-width: 811px) {
+  .site-footer .wp-block-column:first-of-type {
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (min-width: 768px) {
   .site-footer .wp-block-column:first-of-type {
     flex: 1.6;
   }
 }
+@media (max-width: 811px) {
+  .site-footer .wp-block-image {
+    text-align: center;
+  }
+}
+.site-footer .wp-block-image {
+  width: 320px;
+  height: 96px;
+}
 .site-footer .wp-block-image img {
-  max-width: 300px;
-  max-height: 96px !important;
+  width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 .site-footer .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
@@ -1786,37 +1809,48 @@ html.active .menu-toggle:after {
 }
 
 .three-column-block {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
   .three-column-block {
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
   }
 }
 .three-column-block__column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
   padding: 80px 40px;
 }
 @media (min-width: 768px) {
   .three-column-block__column {
-    flex: 1 1 0;
-    height: auto;
+    grid-template-rows: 120px 240px 1fr;
+    row-gap: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .three-column-block__column {
+    grid-template-rows: 140px 360px 1fr;
+  }
+}
+@media (min-width: 1280px) {
+  .three-column-block__column {
+    grid-template-rows: 80px 480px 1fr;
   }
 }
 .three-column-block__heading {
-  margin-bottom: 40px;
+  align-self: start;
+  margin: 0;
   font-size: 2.4rem;
   text-align: center;
   color: #ffffff;
 }
 .three-column-block__image {
+  align-self: start;
   width: 100%;
   max-width: 420px;
-  margin-bottom: 40px;
   aspect-ratio: 1/1;
   overflow: hidden;
   -webkit-mask-repeat: no-repeat;
@@ -1845,12 +1879,13 @@ html.active .menu-toggle:after {
   mask-image: url("https://dev-marion.pikexdigital.com/wp-content/uploads/2026/04/TheStay_AsteriskShape.png");
 }
 .three-column-block__text {
-  margin-top: 32px;
+  align-self: start;
   width: 100%;
+  margin-top: 0;
 }
 .three-column-block__subheading {
   max-width: 400px;
-  margin: 16px auto 0;
+  margin: 0 auto;
   font-size: 1.4rem;
   color: #ffffff;
 }

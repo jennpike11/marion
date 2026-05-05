@@ -1,37 +1,46 @@
 @use '../base/globals' as *;
 
 .three-column-block {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 
   @include respond-up(small) {
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
   }
 
   &__column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
     padding: 80px 40px;
 
     @include respond-up(small) {
-      flex: 1 1 0;
-      height: auto;
+      grid-template-rows: 120px 240px 1fr;
+      row-gap: 24px;
+    }
+
+    @include respond-up(large) {
+      grid-template-rows: 140px 360px 1fr;
+    }
+
+    @include respond-up(xlarge) {
+      grid-template-rows: 80px 480px 1fr;
     }
   }
 
   &__heading {
-    margin-bottom: 40px;
+    align-self: start;
+    margin: 0;
     font-size: 2.4rem;
     text-align: center;
     color: $white;
   }
 
   &__image {
+    align-self: start;
     width: 100%;
     max-width: 420px;
-    margin-bottom: 40px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 
@@ -72,13 +81,14 @@
   }
 
   &__text {
-    margin-top: 32px;
+    align-self: start;
     width: 100%;
+    margin-top: 0;
   }
 
   &__subheading {
     max-width: 400px;
-    margin: 16px auto 0;
+    margin: 0 auto;
     font-size: 1.4rem;
     color: $white;
   }
