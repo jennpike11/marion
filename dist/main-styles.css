@@ -1274,6 +1274,9 @@ html.active .site-overlay {
 .hero-block__section.height--1 {
   height: 100vh;
 }
+.hero-block__section.height-- .hero-block__logo {
+  max-width: 320px;
+}
 .hero-block__wrapper {
   position: fixed;
   top: 0;
@@ -1318,6 +1321,10 @@ html.active .site-overlay {
 }
 .hero-block__content-wrapper.height--1 {
   height: 100vh;
+}
+.hero-block__logo {
+  max-width: 480px;
+  margin: auto;
 }
 .hero-block__content {
   position: relative;

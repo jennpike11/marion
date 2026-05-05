@@ -3,6 +3,7 @@
 if( have_rows('hero_block') ):
   while( have_rows('hero_block') ): the_row();
     $homePage = get_sub_field('home_page');
+    $logo = get_sub_field('logo');
     $image = get_sub_field('image');
     $textColor = get_sub_field('text_color');
     $heading = get_sub_field('heading');
@@ -23,6 +24,7 @@ if( have_rows('hero_block') ):
 
   <div class="hero-block__content-wrapper height--<?php echo $homePage ?>">
     <div class="hero-block__content">
+      <div class="hero-block__logo"><img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>"></div>
       <h1 class="hero-block__heading color--<?php echo $textColor ?>">
         <?php echo $heading; ?>
       </h1>

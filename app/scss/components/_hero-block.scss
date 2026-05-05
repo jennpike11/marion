@@ -15,6 +15,10 @@
     &.height--1 {
       height: 100vh;
     }
+
+    &.height-- .hero-block__logo {
+      max-width: 320px;
+    }
   }
 
   &__wrapper {
@@ -64,6 +68,11 @@
     &.height--1 {
       height: 100vh;
     }
+  }
+
+  &__logo {
+    max-width: 480px;
+    margin: auto;
   }
 
   &__content {
