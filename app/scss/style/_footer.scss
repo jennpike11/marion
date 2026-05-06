@@ -65,6 +65,8 @@
   }
 
   .wp-block-columns {
+    @include container;
+    
     @include respond-up(small){
       justify-content: space-between;
     }

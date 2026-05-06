@@ -68,6 +68,7 @@
       height: 36px;
       background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_left.png) no-repeat;
       background-size: contain;
+      opacity: .5;
     }
 
     &:hover:before {
@@ -90,6 +91,7 @@
       height: 36px;
       background: url(https://dev-marion.pikexdigital.com/wp-content/uploads/2026/05/chevron_right.png) no-repeat;
       background-size: contain;
+      opacity: .5;
     }
 
     &:hover:before {
