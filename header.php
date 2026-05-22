@@ -15,6 +15,7 @@
 <head>
 	
 	<!-- Google tag (gtag.js) -->
+<?php if ( !current_user_can('administrator') ) : ?>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N926NP8VFJ"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -23,6 +24,7 @@
 
 		gtag('config', 'G-N926NP8VFJ');
 	</script>
+<?php endif; ?>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,15 +45,13 @@
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prc-theme' ); ?></button>
 		<div class="site-header">
 			<nav id="site-navigation" class="main-navigation">
-				<?php
-			wp_nav_menu(
+			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'primary-menu',
 					'menu_id'        => 'primary-menu',
 					'fallback_cb'    => false,
 				)
-			);
-				?>
+			);?>
 			</nav><!-- #site-navigation -->
 		</div>	
 	</header><!-- #masthead -->
