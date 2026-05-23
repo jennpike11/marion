@@ -39,6 +39,11 @@
                 padding-left: 120px;
             } 
         }
+
+        .column__description {
+            font-size: 18px;
+            line-height: 26px;
+        }
     }
 
     &.column-layout--right-narrow {
@@ -53,6 +58,11 @@
             @include respond-up(small){
                 width: 30%;
             } 
+        }
+
+        .column__description {
+            font-size: 18px;
+            line-height: 26px;
         }
     }
 

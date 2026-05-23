@@ -10,7 +10,7 @@
   }
 
   &__item {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 
     &:last-child {
       margin-bottom: 0;
@@ -27,7 +27,7 @@
     @include flex-between;
     align-items: center;
     font-family: $font-primary;
-    font-size: clamp(1.5rem, 1.1rem + 1vw, 1rem);
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 1rem);
     cursor: pointer;
 
     &:after {

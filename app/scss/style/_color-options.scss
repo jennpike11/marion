@@ -19,7 +19,7 @@
   }
 
   &--terracotta {
-    background-color: $terracotta;
+    background-color: tint($terracotta, 4%);
   }
 
   &--sky-blue {
@@ -43,7 +43,7 @@
   }  
 
   &--sage-green {
-    background-color: $sage-green;
+    background-color: tint($sage-green, 20%);
   }  
 
   &--slate-blue {

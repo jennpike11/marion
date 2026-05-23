@@ -1,30 +1,10 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./app/scss/main.scss ***!
   \*****************************************************************************************************************************************/
-@font-face {
-  font-family: "Poppins-ExtraLight";
-  src: url("https://thestayonmarion.com/wp-content/themes/prc-theme/app/font/Poppins-ExtraLight.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Poppins-Regular";
-  src: url("https://thestayonmarion.com/wp-content/themes/prc-theme/app/font/Poppins-Regular.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("https://thestayonmarion.com/wp-content/themes/prc-theme/app/font/Poppins-SemiBold.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Poppins-Bold";
-  src: url("https://thestayonmarion.com/wp-content/themes/prc-theme/app/font/Poppins-Bold.woff") format("woff");
-  font-style: normal;
-  font-display: swap;
-}
+@import url(https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap);
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./app/scss/main.scss (1) ***!
+  \*********************************************************************************************************************************************/
 .archive .category-header, .category .category-header, .search-results .category-header {
   background: #f5b896;
 }
@@ -158,7 +138,7 @@ div.wpforms-container-full button[type=submit] {
   padding: 0 20px;
   border-radius: 24px !important;
   color: #ffffff;
-  font-family: "Poppins-ExtraLight", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   line-height: 1.1;
   font-weight: bold;
@@ -334,7 +314,6 @@ html {
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   z-index: 0;
-  font-weight: 300;
 }
 html.active {
   overflow-y: hidden;
@@ -346,7 +325,8 @@ body {
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: "Poppins-ExtraLight", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 200;
 }
 
 h1,
@@ -357,7 +337,8 @@ h5,
 h6 {
   margin-bottom: 16px;
   line-height: 1.2;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
 }
 
 h1 {
@@ -544,7 +525,7 @@ img {
   text-align: center;
   font-size: 28px;
   line-height: 36px;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 .legal-pages a, .legal-pages a:hover {
   color: #2b2b3c;
@@ -564,7 +545,7 @@ img {
   background-color: #c96e3f;
 }
 .background-color--terracotta {
-  background-color: #b5593e;
+  background-color: rgb(183.96, 95.64, 69.72);
 }
 .background-color--sky-blue {
   background-color: #8fd1e8;
@@ -582,7 +563,7 @@ img {
   background-color: #fcb813;
 }
 .background-color--sage-green {
-  background-color: #A8B087;
+  background-color: rgb(185.4, 191.8, 159);
 }
 .background-color--slate-blue {
   background-color: #4a6584;
@@ -864,6 +845,7 @@ img {
   display: block;
   padding: 28px 40px;
   color: inherit;
+  font-weight: 200;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .main-navigation li.current-menu-item > a,
@@ -1018,7 +1000,7 @@ html.active .site-overlay {
   margin: 64px 0 32px;
   font-size: 32px;
   line-height: 40px;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 @media (min-width: 768px) {
   .single-post .entry-content__title {
@@ -1060,7 +1042,7 @@ html.active .site-overlay {
   display: flex;
   justify-content: space-between;
   color: #2b2b3c;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 .single-post .nav-previous .nav-title:before {
   content: "\f177";
@@ -1115,7 +1097,7 @@ html.active .site-overlay {
   padding-bottom: 4px;
   border: 0;
   border-bottom: 1px solid #2b2b3c;
-  font-family: "Poppins-ExtraLight", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 @media (min-width: 768px) {
   .search-field {
@@ -1127,7 +1109,7 @@ html.active .site-overlay {
   margin-left: 16px;
   border: 0;
   border-bottom: 1px solid #2b2b3c;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: 0;
 }
 
@@ -1287,7 +1269,7 @@ html.active .site-overlay {
   text-align: center;
 }
 .faq-block__item {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .faq-block__item:last-child {
   margin-bottom: 0;
@@ -1299,8 +1281,8 @@ html.active .site-overlay {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Poppins-ExtraLight", sans-serif;
-  font-size: clamp(1.5rem, 1.1rem + 1vw, 1rem);
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1rem);
   cursor: pointer;
 }
 .faq-block__question:after {
@@ -1398,7 +1380,7 @@ html.active .site-overlay {
 }
 @media (min-width: 1024px) {
   .hero-block__heading {
-    max-width: 1200px;
+    max-width: 1100px;
   }
 }
 .hero-block__description {
@@ -1500,8 +1482,8 @@ html.active .site-overlay {
 .locations-block__description {
   max-width: 640px;
   margin: 0 auto 40px;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   text-align: center;
 }
 .locations-block__location {
@@ -1568,7 +1550,7 @@ html.active .site-overlay {
 .location-cards__name {
   display: flex;
   align-items: center;
-  font-family: "Poppins-SemiBold", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 .location-cards__icon {
   width: 32px;
@@ -1974,6 +1956,10 @@ html.active .site-overlay {
     padding-left: 120px;
   }
 }
+.two-column-block.column-layout--left-narrow .column__description {
+  font-size: 18px;
+  line-height: 26px;
+}
 @media (min-width: 768px) {
   .two-column-block.column-layout--right-narrow .column:first-of-type {
     width: 70%;
@@ -1984,6 +1970,10 @@ html.active .site-overlay {
   .two-column-block.column-layout--right-narrow .column:last-of-type {
     width: 30%;
   }
+}
+.two-column-block.column-layout--right-narrow .column__description {
+  font-size: 18px;
+  line-height: 26px;
 }
 .two-column-block .column {
   display: flex;
