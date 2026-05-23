@@ -50,82 +50,82 @@
   }
 
 
-// Carousel Block Slider + Hover Scrub
-$(function () {
-  var $carousels = $('.carousel-block__images');
+// Carousel Block
+$('.carousel-block__images').slick({  
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: true,
+  arrows: true,
+  dots: false,
+  speed: 700,
+  cssEase: 'ease',
+  pauseOnHover: false,
+  pauseOnFocus: false,
 
-  if (!$carousels.length || !$.fn.slick) return;
+  swipe: true,
+  touchMove: true,
+  draggable: true,
+  swipeToSlide: true,
 
-  $carousels.each(function () {
-    var $carousel = $(this);
-
-    if (!$carousel.hasClass('slick-initialized')) {
-      $carousel.slick({
-        slidesToShow: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
         slidesToScroll: 1,
-        infinite: true,
-        arrows: true,
-        dots: false,
-        draggable: true,
         swipe: true,
         touchMove: true,
-        swipeToSlide: true,
-        speed: 600,
-        cssEase: 'ease',
-        responsive: [
-          { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 2 } },
-          { breakpoint: 480, settings: { slidesToShow: 1 } }
-        ]
-      });
+        draggable: true,
+        swipeToSlide: true
+      }
+    },
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        swipe: true,
+        touchMove: true,
+        draggable: true,
+        swipeToSlide: true
+      }
+    }
+  ]
+});
+
+// Slider Block Trackpad Horizontal Scroll
+$('.carousel-block__images').each(function () {
+
+  const slider = this;
+  const $slider = $(slider);
+
+  let isScrolling = false;
+
+  slider.addEventListener('wheel', function (e) {
+
+    if (window.innerWidth < 768) return;
+
+    const horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
+    if (!horizontal || isScrolling) return;
+
+    e.preventDefault();
+
+    isScrolling = true;
+
+    if (e.deltaX > 0) {
+      $slider.slick('slickNext');
+    } else {
+      $slider.slick('slickPrev');
     }
 
-    var $hoverArea = $carousel.closest('.slick-slider').find('.slick-list');
-    var lastDirection = null;
-    var hoverTimeout = null;
-    var isPointerDown = false;
+    setTimeout(function () {
+      isScrolling = false;
+    }, 450);
 
-    $hoverArea.on('mousedown touchstart', function () {
-      isPointerDown = true;
-    });
+  }, { passive: false });
 
-    $(document).on('mouseup touchend touchcancel', function () {
-      isPointerDown = false;
-    });
-
-    $hoverArea.on('mousemove', function (e) {
-      if (isPointerDown) return;
-
-      var rect = this.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var width = rect.width;
-
-      clearTimeout(hoverTimeout);
-
-      if (x < width * 0.33) {
-        if (lastDirection !== 'prev') {
-          $carousel.slick('slickPrev');
-          lastDirection = 'prev';
-        }
-      } else if (x > width * 0.66) {
-        if (lastDirection !== 'next') {
-          $carousel.slick('slickNext');
-          lastDirection = 'next';
-        }
-      } else {
-        lastDirection = null;
-      }
-
-      hoverTimeout = setTimeout(function () {
-        lastDirection = null;
-      }, 250);
-    });
-
-    $hoverArea.on('mouseleave', function () {
-      clearTimeout(hoverTimeout);
-      lastDirection = null;
-    });
-  });
 });
 
 

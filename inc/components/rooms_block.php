@@ -23,7 +23,11 @@
               while( have_rows('room_images') ): the_row(); 
               $roomImage = get_sub_field('room_image');
             ?>
-              <div class="rooms-block__image"><img src="<?php echo $roomImage['url'] ?>" alt="<?php echo $roomImage['title'] ?>"></div>
+              <?php if ( ! empty( $roomImage ) && is_array( $roomImage ) ) : ?>
+                <div class="rooms-block__image">
+                  <img src="<?php echo esc_url( $roomImage['url'] ); ?>" alt="<?php echo esc_attr( $roomImage['alt'] ?? '' ); ?>">
+                </div>
+              <?php endif; ?>
             <?php endwhile; ?>
             <?php endif; ?>
           </div>

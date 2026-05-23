@@ -11,10 +11,10 @@
        <?php if ( have_rows('images') ): ?>
         <?php while ( have_rows('images') ): the_row();
           $image = get_sub_field('image');
-          if ( empty($image) ) continue;
+          if ( empty($image) || ! is_array($image) ) continue;
         ?>
           <div class="carousel-block__image">
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ?? ''); ?>">
           </div>
         <?php endwhile; ?>
       <?php endif; ?>
