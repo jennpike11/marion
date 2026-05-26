@@ -16,9 +16,12 @@
     }
 
     &.column-layout--equal {
+        .column {
+            padding: 24px 0;
+        }
+
         .column__heading {
             max-width: 560px;
-            margin-bottom: 32px;
         }
 
         .column__description {
@@ -89,14 +92,6 @@
         &__description {
             a, a:hover {
                 color: $ochre;
-            }
-        }
-
-        &:first-of-type {
-            margin-bottom: 40px;
-
-            @include respond-up(small){
-                margin-bottom: unset;
             }
         }
     }

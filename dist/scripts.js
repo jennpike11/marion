@@ -85,7 +85,7 @@
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         swipe: true,
         touchMove: true,
         draggable: true,

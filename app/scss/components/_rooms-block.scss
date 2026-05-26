@@ -4,18 +4,33 @@
   @include container;
 
   &__rooms {
+    row-gap: 40px;
+
     @include respond-up(small){
       @include flex-between;
       flex-wrap: wrap;
+      row-gap: unset;
     }
   }
 
    &__room {
-    margin-bottom: 64px;
-    
+    margin-bottom: 20px;
+
     @include respond-up(small){
      width: calc(50% - 32px);
+     margin-bottom: unset;
     }
+
+    &:last-of-type{
+      margin-bottom: unset;
+    }
+  }
+
+  &__carousel,
+  .slick-list,
+  .slick-track {
+    background: transparent;
+    line-height: 0;
   }
 
   &__image {
@@ -26,6 +41,7 @@
     }
 
     img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -99,52 +115,3 @@
     }
   }
 } 
-
-// Match Primary Button Color to Text and Dots
-.rooms-block__room.color--canvas .rooms-block__button .primary-button {
-  background-color: $peach-glow;
-
-  &:hover {
-    background-color: tint($peach-glow, 12%);
-  }
-}
-
-.rooms-block__room.color--ember .rooms-block__button .primary-button {
-  background-color: $ochre;
-
-  &:hover {
-    background-color: tint($ochre, 12%);
-  }
-}
-
-.rooms-block__room.color--clay .rooms-block__button .primary-button {
-  background-color: $coral-pink;
-
-  &:hover {
-    background-color: tint($coral-pink, 12%);
-  }
-}
-
-.rooms-block__room.color--sage .rooms-block__button .primary-button {
-  background-color: $rust-orange;
-
-  &:hover {
-    background-color: tint($rust-orange, 12%);
-  }
-}
-
-.rooms-block__room.color--harbor .rooms-block__button .primary-button {
-  background-color: $slate-blue;
-
-  &:hover {
-    background-color: tint($slate-blue, 12%);
-  }
-}
-
-.rooms-block__room.color--ink .rooms-block__button .primary-button {
-  background-color: $lavender-mist;
-
-  &:hover {
-    background-color: tint($lavender-mist, 12%);
-  }
-}

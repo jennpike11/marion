@@ -1401,12 +1401,17 @@ html.active .site-overlay {
   z-index: 11;
 }
 .hero-block__heading {
-  max-width: 500px;
+  max-width: 320px;
   margin: auto;
   font-size: clamp(2.4rem, 5vw, 5rem);
   line-height: 1.1;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   will-change: transform;
+}
+@media (min-width: 768px) {
+  .hero-block__heading {
+    max-width: 500px;
+  }
 }
 @media (min-width: 1024px) {
   .hero-block__heading {
@@ -1691,20 +1696,34 @@ html.active .site-overlay {
     width: 100%;
   }
 }
+.rooms-block__rooms {
+  row-gap: 40px;
+}
 @media (min-width: 768px) {
   .rooms-block__rooms {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    row-gap: unset;
   }
 }
 .rooms-block__room {
-  margin-bottom: 64px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .rooms-block__room {
     width: calc(50% - 32px);
+    margin-bottom: unset;
   }
+}
+.rooms-block__room:last-of-type {
+  margin-bottom: unset;
+}
+.rooms-block__carousel,
+.rooms-block .slick-list,
+.rooms-block .slick-track {
+  background: transparent;
+  line-height: 0;
 }
 .rooms-block__image {
   height: 400px !important;
@@ -1715,6 +1734,7 @@ html.active .site-overlay {
   }
 }
 .rooms-block__image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1778,48 +1798,6 @@ html.active .site-overlay {
 }
 .rooms-block .slick-next:hover:before {
   color: rgb(56.1, 56.1, 56.1);
-}
-
-.rooms-block__room.color--canvas .rooms-block__button .primary-button {
-  background-color: #f5b896;
-}
-.rooms-block__room.color--canvas .rooms-block__button .primary-button:hover {
-  background-color: rgb(246.2, 192.52, 162.6);
-}
-
-.rooms-block__room.color--ember .rooms-block__button .primary-button {
-  background-color: #fcb813;
-}
-.rooms-block__room.color--ember .rooms-block__button .primary-button:hover {
-  background-color: rgb(252.36, 192.52, 47.32);
-}
-
-.rooms-block__room.color--clay .rooms-block__button .primary-button {
-  background-color: #e88b8b;
-}
-.rooms-block__room.color--clay .rooms-block__button .primary-button:hover {
-  background-color: rgb(234.76, 152.92, 152.92);
-}
-
-.rooms-block__room.color--sage .rooms-block__button .primary-button {
-  background-color: #c96e3f;
-}
-.rooms-block__room.color--sage .rooms-block__button .primary-button:hover {
-  background-color: rgb(207.48, 127.4, 86.04);
-}
-
-.rooms-block__room.color--harbor .rooms-block__button .primary-button {
-  background-color: #4a6584;
-}
-.rooms-block__room.color--harbor .rooms-block__button .primary-button:hover {
-  background-color: rgb(95.72, 119.48, 146.76);
-}
-
-.rooms-block__room.color--ink .rooms-block__button .primary-button {
-  background-color: #c5bdd4;
-}
-.rooms-block__room.color--ink .rooms-block__button .primary-button:hover {
-  background-color: rgb(203.96, 196.92, 217.16);
 }
 
 .spacer-block--single {
@@ -1965,9 +1943,11 @@ html.active .site-overlay {
 .two-column-block.column-alignment--top .column {
   align-items: flex-start;
 }
+.two-column-block.column-layout--equal .column {
+  padding: 24px 0;
+}
 .two-column-block.column-layout--equal .column__heading {
   max-width: 560px;
-  margin-bottom: 32px;
 }
 .two-column-block.column-layout--equal .column__description {
   max-width: 500px;
@@ -2025,14 +2005,6 @@ html.active .site-overlay {
 }
 .two-column-block .column__description a, .two-column-block .column__description a:hover {
   color: #fcb813;
-}
-.two-column-block .column:first-of-type {
-  margin-bottom: 40px;
-}
-@media (min-width: 768px) {
-  .two-column-block .column:first-of-type {
-    margin-bottom: unset;
-  }
 }
 .two-column-block .primary-button {
   margin: 32px auto 0;
