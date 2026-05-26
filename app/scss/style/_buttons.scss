@@ -160,6 +160,17 @@ div.wpforms-container-full button[type=submit] {
     }
 }
 
+.primary-button.button-color--black {
+    background-color: $black;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+    color: $white;
+    background-color: tint($black, 20%);
+    }
+}
+
 
 .read-more {
     display: flex;

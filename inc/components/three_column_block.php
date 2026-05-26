@@ -1,6 +1,7 @@
 <?php  // Three Column Block 
   if( have_rows('three_column_block') ): 
-  while( have_rows('three_column_block') ): the_row(); 
+  while( have_rows('three_column_block') ): the_row();
+   $textColor = get_sub_field('text_color');  
   ?>
 
   <section class="three-column-block__wrapper">
@@ -15,7 +16,7 @@
       ?>
 			<div class="three-column-block__column background-color--<?php echo $backgroundColor ?>">
         <?php if($heading): ?>
-          <h2 class="three-column-block__heading"><?php echo $heading ?></h2>
+          <h2 class="three-column-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
         <?php endif; ?>
 
         <?php if($image): ?>
@@ -25,11 +26,11 @@
         <?php if($subheading || $description): ?>
           <div class="three-column-block__text">
             <?php if($subheading): ?>
-              <h3 class="three-column-block__subheading"><?php echo $subheading ?></h3>
+              <h3 class="three-column-block__subheading color--<?php echo $textColor ?>"><?php echo $subheading ?></h3>
             <?php endif; ?>
 
             <?php if($description): ?>
-              <div class="three-column-block__description"><?php echo $description ?></div>
+              <div class="three-column-block__description color--<?php echo $textColor ?>"><?php echo $description ?></div>
             <?php endif; ?>
           </div>
         <?php endif; ?>

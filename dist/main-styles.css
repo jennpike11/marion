@@ -257,6 +257,14 @@ div.wpforms-container-full button[type=submit]:focus-visible {
   background-color: rgb(112.6, 201.4, 224.6);
 }
 
+.primary-button.button-color--black {
+  background-color: #222222;
+}
+.primary-button.button-color--black:hover, .primary-button.button-color--black:active, .primary-button.button-color--black:focus-visible {
+  color: #ffffff;
+  background-color: rgb(78.2, 78.2, 78.2);
+}
+
 .read-more {
   display: flex;
   align-items: center;
@@ -1851,7 +1859,6 @@ html.active .site-overlay {
   margin: 0;
   font-size: 2.4rem;
   text-align: center;
-  color: #ffffff;
 }
 .three-column-block__image {
   align-self: start;
@@ -1893,14 +1900,12 @@ html.active .site-overlay {
   max-width: 400px;
   margin: 0 auto;
   font-size: 1.4rem;
-  color: #ffffff;
 }
 .three-column-block__description {
   max-width: 400px;
   margin: 16px auto 0;
   font-size: 1rem;
   line-height: 1.24;
-  color: #ffffff;
 }
 .three-column-block ul {
   margin-top: 16px;

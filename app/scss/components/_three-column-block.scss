@@ -34,7 +34,6 @@
     margin: 0;
     font-size: 2.4rem;
     text-align: center;
-    color: $white;
   }
 
   &__image {
@@ -42,7 +41,7 @@
     width: 100%;
     max-width: 420px;
     aspect-ratio: 1 / 1;
-    overflow: hidden;
+    overflow: hidden; 
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -90,7 +89,6 @@
     max-width: 400px;
     margin: 0 auto;
     font-size: 1.4rem;
-    color: $white;
   }
 
   &__description {
@@ -98,7 +96,6 @@
     margin: 16px auto 0;
     font-size: 1rem;
     line-height: 1.24;
-    color: $white;
   }
 
   ul {
