@@ -2,13 +2,13 @@
 
 .primary-button,
 .load-more,
-.frm_style_formidable-style.with_frm_style .frm_submit button,
-div.wpforms-container-full button[type=submit] {
+.search-submit {
   @include flex-center;
   width: fit-content;
   min-width: 160px;
   height: 48px;
   padding: 0 20px;
+  border: 0;
   border-radius: 24px !important;
   color: $white;
   font-family: $font-primary;

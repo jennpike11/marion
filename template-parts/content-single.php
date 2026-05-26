@@ -14,7 +14,6 @@
 	<div class="entry-content__title">
 		<?php the_title() ?>
 	</div>
-	<hr>
 
 	<?php the_content(); ?>
 

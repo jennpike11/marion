@@ -167,3 +167,32 @@ function register_my_menus() {
 	);
 }
 add_action( 'init', 'register_my_menus' );
+
+
+// ACF Category Thumbnail Field Group
+if (function_exists('acf_add_local_field_group')) {
+	acf_add_local_field_group([
+		'key' => 'group_category_thumbnail',
+		'title' => 'Category Thumbnail',
+		'fields' => [
+			[
+				'key' => 'field_category_thumbnail',
+				'label' => 'Thumbnail Image',
+				'name' => 'category_thumbnail',
+				'type' => 'image',
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'library' => 'all',
+			],
+		],
+		'location' => [
+			[
+				[
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'category',
+				],
+			],
+		],
+	]);
+}

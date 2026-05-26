@@ -1,14 +1,25 @@
-<?php /* 404 Not Found Page */ ?>
+<?php
+/**
+ * The template for displaying search results pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package prc_theme
+ */
 
-<?php get_header(); ?>
+get_header();
+?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+		<div class="category-header">
+			<img src="https://thestayonmarion.com/wp-content/uploads/2026/05/rooms_1.jpg">
+		</div>
 		<div class="entry-content">
-			<div class="entry-content__main">
-				<h3>Not found, error 404</h3>
-				<p>The page you are looking for no longer exists. Perhaps you can return back to the homepage and see if you can find what you are looking for. Or, you can try finding it by using the search form below.</p>
-				<div class="entry-content__search-form"><?php get_search_form(); ?></div>
+			<h1>It seems we can’t find what you’re looking for. Perhaps searching can help.</h1>
+
+			<div class="articles">
+				<?php get_search_form(); ?>
 			</div>
 		</div><!-- .entry-content -->
 

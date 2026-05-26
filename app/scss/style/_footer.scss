@@ -34,25 +34,6 @@
       }
     }
   }
-  
-  // &__legal {
-  //   padding: 12px;
-  //   border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
-  //   font-size: 10px;
-  //   text-align: center;
-  //   color: $white;
-  //   background: $slate-blue;
-
-  //   @include respond-up(medium) {
-  //     font-size: 12px;
-  //   }
-
-  //   a, a:hover {
-  //     font-size: inherit;
-  //     line-height: inherit;
-  //     font-weight: inherit;
-  //   }
-  // }
 
    p {
     margin-bottom: unset;
@@ -142,8 +123,10 @@
     column-count: 2;
     column-gap: 32px;
   }
+}
 
-  li {
-    margin-bottom: 12px;
-  }
+#menu-footer-menu,
+#menu-footer-menu ul,
+#menu-footer-menu li {
+	list-style: none !important;
 }
