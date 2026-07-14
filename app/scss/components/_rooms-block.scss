@@ -9,7 +9,6 @@
     @include respond-up(small){
       @include flex-between;
       flex-wrap: wrap;
-      row-gap: unset;
     }
   }
 
