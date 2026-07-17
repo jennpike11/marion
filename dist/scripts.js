@@ -10,7 +10,7 @@
 (function ($) {
   // Mobile Menu
   $(window).scroll(function () {
-    if ($(window).scrollTop() >= 800) {
+    if ($(window).scrollTop() >= 400) {
       $('.site-header__wrapper').addClass('scrolled');
       $('nav div').addClass('visible-title');
     } else {

@@ -809,6 +809,62 @@ img {
   }
 }
 
+.site-header__wrapper {
+  position: relative;
+  z-index: 10;
+}
+@media (min-width: 1024px) {
+  .site-header__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 4%;
+    background-color: transparent;
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+}
+.site-header__wrapper .primary-button {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .site-header__wrapper .primary-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: fit-content;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__wrapper.scrolled {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #f5f0e8;
+    box-shadow: 0 8px 24px rgba(43, 43, 60, 0.08);
+  }
+}
+.site-header__wrapper.scrolled .site-header__logo img {
+  opacity: 0;
+}
+.site-header__wrapper.scrolled .site-header__logo:after {
+  opacity: 1;
+}
+@media (min-width: 1024px) {
+  .site-header__wrapper.scrolled li {
+    font-size: 14px;
+    color: #222222;
+  }
+}
+.site-header__wrapper.scrolled .primary-button {
+  height: 36px;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -826,16 +882,49 @@ img {
     width: 33%;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .site-header {
-    width: 16%;
+    position: static;
+    flex: 1;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    background-color: transparent;
+    transition: none;
   }
 }
 .active .site-header {
   left: 0;
 }
+
 .site-header__logo {
   display: none;
+}
+@media (min-width: 1024px) {
+  .site-header__logo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(150px, 14vw, 220px);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+.site-header__logo:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_OneColor_Black-scaled.png") center/contain no-repeat;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.site-header__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .main-navigation {
@@ -847,15 +936,37 @@ img {
     padding: 140px 0 48px;
   }
 }
+@media (min-width: 1024px) {
+  .main-navigation {
+    padding: 0;
+  }
+}
 .main-navigation ul {
   display: flex;
   flex-direction: column;
   row-gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 1024px) {
+  .main-navigation ul {
+    flex-direction: row;
+    align-items: center;
+    column-gap: clamp(20px, 2.5vw, 44px);
+  }
 }
 .main-navigation li {
   position: relative;
   color: #e88b8b;
   font-size: 24px;
+}
+@media (min-width: 1024px) {
+  .main-navigation li {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 100;
+  }
 }
 .main-navigation li a {
   display: block;
@@ -864,13 +975,33 @@ img {
   font-weight: 200;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
+@media (min-width: 1024px) {
+  .main-navigation li a {
+    padding: 10px 0;
+    font-weight: 200;
+    background-color: transparent;
+  }
+}
 .main-navigation li.current-menu-item > a,
 .main-navigation li:hover > a {
   color: #2b2b3c;
   background-color: #f5b896;
 }
+@media (min-width: 1024px) {
+  .main-navigation li.current-menu-item > a,
+  .main-navigation li:hover > a {
+    color: inherit;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
 .main-navigation li.menu-item-has-children {
   background-color: rgba(255, 255, 255, 0.04);
+}
+@media (min-width: 1024px) {
+  .main-navigation li.menu-item-has-children {
+    background-color: transparent;
+  }
 }
 .main-navigation li.menu-item-has-children > a {
   color: #ffffff;
@@ -879,20 +1010,69 @@ img {
   color: #2b2b3c;
   background-color: #f5b896;
 }
+@media (min-width: 1024px) {
+  .main-navigation li.menu-item-has-children:hover > a {
+    color: #e88b8b;
+    background-color: transparent;
+  }
+}
 .main-navigation .sub-menu {
   padding: 12px 0 20px;
   background-color: rgba(255, 255, 255, 0.04);
 }
+@media (min-width: 1024px) {
+  .main-navigation .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: -24px;
+    display: block;
+    min-width: 220px;
+    padding: 12px 0;
+    background-color: #f9f9f7;
+    box-shadow: 0 12px 30px rgba(43, 43, 60, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+}
+@media (min-width: 1024px) {
+  .main-navigation li.menu-item-has-children:hover > .sub-menu,
+  .main-navigation li.menu-item-has-children:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
 .main-navigation .sub-menu li {
   font-size: 20px;
+}
+@media (min-width: 1024px) {
+  .main-navigation .sub-menu li {
+    color: #2b2b3c;
+    font-size: 15px;
+  }
 }
 .main-navigation .sub-menu li a {
   padding: 14px 40px 14px 64px;
   color: #ffffff;
 }
+@media (min-width: 1024px) {
+  .main-navigation .sub-menu li a {
+    padding: 10px 24px;
+    color: inherit;
+    white-space: nowrap;
+  }
+}
 .main-navigation .sub-menu li:hover a {
   color: #2b2b3c;
   background-color: #f5b896;
+}
+@media (min-width: 1024px) {
+  .main-navigation .sub-menu li:hover a {
+    color: #2b2b3c;
+    background-color: #f5b896;
+  }
 }
 @media (max-height: 520px) {
   .main-navigation {
@@ -908,6 +1088,26 @@ img {
   }
 }
 
+@media (min-width: 1024px) {
+  .site-header__wrapper.scroll .main-navigation > div > ul > li {
+    color: #2b2b3c;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__wrapper.scroll .main-navigation li.menu-item-has-children > a {
+    color: #2b2b3c;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__wrapper.scroll .main-navigation li.current-menu-item > a,
+  .site-header__wrapper.scroll .main-navigation li:hover > a,
+  .site-header__wrapper.scroll .main-navigation li.menu-item-has-children:hover > a {
+    color: #e88b8b;
+  }
+}
+
 .site-overlay {
   position: fixed;
   inset: 0;
@@ -917,6 +1117,20 @@ img {
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   z-index: 8;
+}
+@media (min-width: 1024px) {
+  .site-overlay {
+    display: none;
+  }
+}
+
+html.active {
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  html.active {
+    overflow: visible;
+  }
 }
 
 html.active .site-overlay {
@@ -938,6 +1152,11 @@ html.active .site-overlay {
   .menu-toggle {
     top: 16px;
     right: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
   }
 }
 .menu-toggle:after {

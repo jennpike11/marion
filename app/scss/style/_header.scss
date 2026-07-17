@@ -1,5 +1,65 @@
 @use '../base/globals' as *;
 
+.site-header__wrapper {
+  position: relative;
+  z-index: 10;
+
+  @include respond-up(large) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 4%;
+    background-color: transparent;
+    transition: padding .3s ease-in-out, background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+
+  .primary-button {
+    display: none;
+
+    @include respond-up(large) {
+      @include flex-center;
+      flex: 1;
+      max-width: fit-content;
+      height: 40px;
+    }
+  }
+}
+
+.site-header__wrapper.scrolled {
+  @include respond-up(large) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: $warm-white;
+    box-shadow: 0 8px 24px rgba($midnight-navy, .08);
+  }
+
+  .site-header__logo {
+    img {
+      opacity: 0;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  li {
+    @include respond-up(large) {
+      font-size: 14px;
+      color: $black;
+    }
+  }
+
+  .primary-button {
+    height: 36px;
+  }
+}
+
+
 .site-header {
   position: fixed;
   top: 0;
@@ -12,20 +72,53 @@
   background-color: $midnight-navy;
   transition: left 0.6s ease-in-out;
 
-  @include respond-up(small) { 
+  @include respond-up(small) {
     width: 33%;
   }
 
-  @include respond-up(xlarge) { 
-    width: 16%;
+  @include respond-up(large) {
+    position: static;
+    flex: 1;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    background-color: transparent;
+    transition: none;
   }
 
   .active & {
     left: 0;
   }
+}
 
-  &__logo {
-    display: none;
+.site-header__logo {
+  display: none;
+
+  @include respond-up(large) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(150px, 14vw, 220px);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_OneColor_Black-scaled.png') center / contain no-repeat;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
   }
 }
 
@@ -33,20 +126,39 @@
   padding: 120px 0 48px;
   margin: 0;
 
-  @include respond-up(small){
+  @include respond-up(small) {
     padding: 140px 0 48px;
+  }
+
+  @include respond-up(large) {
+    padding: 0;
   }
 
   ul {
     display: flex;
     flex-direction: column;
     row-gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include respond-up(large) {
+      flex-direction: row;
+      align-items: center;
+      column-gap: clamp(20px, 2.5vw, 44px);
+    }
   }
 
   li {
     position: relative;
     color: $coral-pink;
     font-size: 24px;
+
+    @include respond-up(large) {
+      font-size: 16px;
+      color: $white;
+      font-weight: 100;
+    }
   }
 
   li a {
@@ -55,16 +167,32 @@
     color: inherit;
     font-weight: 200;
     transition: color .2s ease-in-out, background-color .2s ease-in-out;
+
+    @include respond-up(large) {
+      padding: 10px 0;
+      font-weight: 200;
+      background-color: transparent;
+    }
   }
 
   li.current-menu-item > a,
   li:hover > a {
     color: $midnight-navy;
     background-color: $peach-glow;
+
+    @include respond-up(large) {
+      color: inherit;
+      text-decoration: underline;
+      background-color: transparent;
+    }
   }
 
   li.menu-item-has-children {
     background-color: rgba($white, .04);
+
+    @include respond-up(large) {
+      background-color: transparent;
+    }
   }
 
   li.menu-item-has-children > a {
@@ -74,25 +202,70 @@
   li.menu-item-has-children:hover > a {
     color: $midnight-navy;
     background-color: $peach-glow;
+
+    @include respond-up(large) {
+      color: $coral-pink;
+      background-color: transparent;
+    }
   }
 
   .sub-menu {
     padding: 12px 0 20px;
     background-color: rgba($white, .04);
+
+    @include respond-up(large) {
+      position: absolute;
+      top: 100%;
+      left: -24px;
+      display: block;
+      min-width: 220px;
+      padding: 12px 0;
+      background-color: #f9f9f7;
+      box-shadow: 0 12px 30px rgba($midnight-navy, .14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out;
+    }
+  }
+
+  li.menu-item-has-children:hover > .sub-menu,
+  li.menu-item-has-children:focus-within > .sub-menu {
+    @include respond-up(large) {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   }
 
   .sub-menu li {
     font-size: 20px;
+
+    @include respond-up(large) {
+      color: $midnight-navy;
+      font-size: 15px;
+    }
   }
 
   .sub-menu li a {
     padding: 14px 40px 14px 64px;
     color: $white;
+
+    @include respond-up(large) {
+      padding: 10px 24px;
+      color: inherit;
+      white-space: nowrap;
+    }
   }
 
   .sub-menu li:hover a {
     color: $midnight-navy;
     background-color: $peach-glow;
+
+    @include respond-up(large) {
+      color: $midnight-navy;
+      background-color: $peach-glow;
+    }
   }
 
   @media (max-height: 520px) {
@@ -110,6 +283,26 @@
   }
 }
 
+.site-header__wrapper.scroll .main-navigation > div > ul > li {
+  @include respond-up(large) {
+    color: $midnight-navy;
+  }
+}
+
+.site-header__wrapper.scroll .main-navigation li.menu-item-has-children > a {
+  @include respond-up(large) {
+    color: $midnight-navy;
+  }
+}
+
+.site-header__wrapper.scroll .main-navigation li.current-menu-item > a,
+.site-header__wrapper.scroll .main-navigation li:hover > a,
+.site-header__wrapper.scroll .main-navigation li.menu-item-has-children:hover > a {
+  @include respond-up(large) {
+    color: $coral-pink;
+  }
+}
+
 .site-overlay {
   position: fixed;
   inset: 0;
@@ -119,6 +312,18 @@
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   z-index: 8;
+
+  @include respond-up(large) {
+    display: none;
+  }
+}
+
+html.active {
+  overflow: hidden;
+
+  @include respond-up(large) {
+    overflow: visible;
+  }
 }
 
 html.active .site-overlay {
@@ -136,9 +341,13 @@ html.active .site-overlay {
   font-size: 0;
   background: 0;
 
-  @include respond-up(small){
+  @include respond-up(small) {
     top: 16px;
     right: 16px;
+  }
+
+  @include respond-up(large) {
+    display: none;
   }
 
   &:after {
@@ -147,13 +356,13 @@ html.active .site-overlay {
     font-size: 32px;
     color: $ochre;
 
-    @include respond-up(small){
+    @include respond-up(small) {
       font-size: 40px;
     }
   }
 }
 
 .active .menu-toggle:after {
-  content:'\f00d';
+  content: '\f00d';
   font-family: fontawesome;
 }
