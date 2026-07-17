@@ -3,6 +3,7 @@
 if( have_rows('hero_block') ):
   while( have_rows('hero_block') ): the_row();
     $homePage = get_sub_field('home_page');
+    $alignment = get_sub_field('alignment');
     $logo = get_sub_field('logo');
     $image = get_sub_field('image');
     $textColor = get_sub_field('text_color');
@@ -12,7 +13,7 @@ if( have_rows('hero_block') ):
     $buttonColor = get_sub_field('button_color');
 ?>
 
-<section class="hero-block__section height--<?php echo $homePage ?>" data-component="hero-block">
+<section class="hero-block__section alignment--<?php echo $alignment ?> height--<?php echo $homePage ?>" data-component="hero-block">
 
   <div class="hero-block__wrapper height--<?php echo $homePage ?>">
     <div class="hero-block">

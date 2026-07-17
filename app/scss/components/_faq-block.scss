@@ -2,15 +2,26 @@
 
 .faq-block {
   @include container;
-  max-width: 900px;
+
+  @include respond-up(small){
+    @include flex-between;
+    flex-wrap: wrap;
+    row-gap: 32px;
+  }
 
   &__heading {
-    margin-bottom: 32px;
+    margin-bottom: 56px;
     text-align: center;
   }
 
   &__item {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $black;
+
+    @include respond-up(small) {
+      flex: 0 0 calc(50% - 56px);
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -24,7 +35,7 @@
   }
 
   &__question {
-    @include flex-between;
+    display: flex;
     align-items: center;
     font-family: $font-primary;
     font-size: clamp(1.4rem, 1.1rem + 1vw, 1rem);

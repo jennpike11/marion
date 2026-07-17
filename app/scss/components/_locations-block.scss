@@ -4,7 +4,7 @@
   @include container;
   
   &__wrapper {
-    background-color: $white;
+    background-color: $warm-white;
     color: $black;
   }
 
@@ -59,6 +59,7 @@
     border-radius: 4px;
     overflow: hidden;
     color: $black;
+    background-color: $white;
 
     @include respond-up(small){
       width: calc((100% - 24px) / 2);

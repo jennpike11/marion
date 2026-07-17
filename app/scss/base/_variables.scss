@@ -5,21 +5,47 @@ $max-width: 1320px;
 $border-radius: 2px;
 
 // Colors
-$midnight-navy: #2b2b3c;
-$warm-white: #f5f0e8;
-$coral-pink: #e88b8b;
-$rust-orange: #c96e3f;
-$terracotta: #b5593e;
-$sky-blue: #8fd1e8;
-$peach-glow: #f5b896;
-$lavender-mist: #c5bdd4;
-$deep-plum: #4a3d5e;
-$ochre: #fcb813;
-$sage-green: #A8B087;
-$slate-blue: #4a6584;
-$turquoise: #4dbcd9;
-$white: #ffffff;
-$black: #222222;
+// -----------------------------------------------------
+// PRIMARY / FOUNDATION
+// -----------------------------------------------------
+
+$white:           #ffffff;
+$warm-white:      #f5f0e8;
+$black:           #222222;
+$midnight-navy:   #2b2b3c;
+
+
+// -----------------------------------------------------
+// SOFT BACKGROUND TINTS
+// (Use sparingly as section backgrounds)
+// -----------------------------------------------------
+
+$lavender-mist:   #c5bdd4;
+$sage-green:      #A8B087;
+$sky-blue:        #8fd1e8;
+$peach-glow:      #f5b896;
+
+
+// -----------------------------------------------------
+// BRAND ACCENTS
+// (Buttons, icons, highlights, flowers, links)
+// -----------------------------------------------------
+
+$ochre:           #fcb813;
+$coral-pink:      #e88b8b;
+$turquoise:       #4dbcd9;
+$rust-orange:     #c96e3f;
+$terracotta:      #b5593e;
+
+
+// -----------------------------------------------------
+// SUPPORTING DARKS
+// -----------------------------------------------------
+
+$slate-blue:      #4a6584;
+$deep-plum:       #4a3d5e;
+
+
 
 // Typography
 $font-primary: "DM Sans", sans-serif;

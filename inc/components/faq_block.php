@@ -8,10 +8,10 @@
   ?>
 
   <section class="faq-block__wrapper padding--<?php echo $verticalPadding ?> background-color--<?php echo $backgroundColor ?>">
+    <?php if($heading): ?>
+      <h2 class="faq-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
+    <?php endif; ?>
 		<div class="faq-block">
-      <?php if($heading): ?>
-			  <h2 class="faq-block__heading color--<?php echo $textColor ?>"><?php echo $heading ?></h2>
-      <?php endif; ?>
       <?php if( have_rows('questions_and_answers') ): 
         while( have_rows('questions_and_answers') ): the_row(); 
         $question = get_sub_field('question');

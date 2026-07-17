@@ -111,6 +111,48 @@
   }
 }
 
+.hero-block__section.height--1.alignment--left {
+  .hero-block__content-wrapper {
+    max-width: 1200px;
+    text-align: unset;
+  }
+
+  .hero-block__image {
+      &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background: linear-gradient(
+        90deg,
+        rgba(25, 22, 28, 0.72) 0%,
+        rgba(25, 22, 28, 0.58) 22%,
+        rgba(25, 22, 28, 0.28) 48%,
+        rgba(25, 22, 28, 0.08) 68%,
+        rgba(25, 22, 28, 0) 100%
+      );
+    }
+  }
+
+  .hero-block__logo {
+    display: none;
+  }
+
+  .hero-block__heading {
+    max-width: 640px;
+  }
+
+  .hero-block__description {
+    max-width: 480px;
+    margin: 32px 0 0;
+  }
+
+  .hero-block__button {
+    margin: 40px 0 0;
+  }
+}
+
 
 // PARALLAX
 @supports (animation-timeline: scroll()) {

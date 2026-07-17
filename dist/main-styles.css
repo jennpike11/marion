@@ -552,37 +552,37 @@ img {
   background-color: #f5f0e8;
 }
 .background-color--coral-pink {
-  background-color: rgb(237.75, 168, 168);
+  background-color: rgb(248.56, 222.52, 222.52);
 }
 .background-color--rust-orange {
-  background-color: #c96e3f;
+  background-color: rgb(235.56, 202.8, 185.88);
 }
 .background-color--terracotta {
-  background-color: rgb(183.96, 95.64, 69.72);
+  background-color: rgb(228.36, 195.24, 185.52);
 }
 .background-color--sky-blue {
-  background-color: #8fd1e8;
+  background-color: rgb(214.68, 238.44, 246.72);
 }
 .background-color--peach-glow {
-  background-color: #f5b896;
+  background-color: rgb(251.4, 229.44, 217.2);
 }
 .background-color--lavender-mist {
-  background-color: #c5bdd4;
+  background-color: rgb(234.12, 231.24, 239.52);
 }
 .background-color--deep-plum {
-  background-color: #4a3d5e;
+  background-color: rgb(110.2, 99.8, 126.2);
 }
 .background-color--ochre {
-  background-color: #fcb813;
+  background-color: rgb(254.16, 235.12, 188.92);
 }
 .background-color--sage-green {
-  background-color: rgb(189.75, 195.75, 165);
+  background-color: rgb(223.68, 226.56, 211.8);
 }
 .background-color--slate-blue {
-  background-color: #4a6584;
+  background-color: rgb(189.84, 199.56, 210.72);
 }
 .background-color--turquoise {
-  background-color: #4dbcd9;
+  background-color: rgb(190.92, 230.88, 241.32);
 }
 .background-color--white {
   background-color: #ffffff;
@@ -1291,15 +1291,27 @@ html.active .site-overlay {
     width: 100%;
   }
 }
-.faq-block {
-  max-width: 900px;
+@media (min-width: 768px) {
+  .faq-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 32px;
+  }
 }
 .faq-block__heading {
-  margin-bottom: 32px;
+  margin-bottom: 56px;
   text-align: center;
 }
 .faq-block__item {
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+}
+@media (min-width: 768px) {
+  .faq-block__item {
+    flex: 0 0 calc(50% - 56px);
+  }
 }
 .faq-block__item:last-child {
   margin-bottom: 0;
@@ -1309,7 +1321,6 @@ html.active .site-overlay {
 }
 .faq-block__question {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-family: "DM Sans", sans-serif;
   font-size: clamp(1.4rem, 1.1rem + 1vw, 1rem);
@@ -1429,6 +1440,31 @@ html.active .site-overlay {
   margin: 40px auto 0;
 }
 
+.hero-block__section.height--1.alignment--left .hero-block__content-wrapper {
+  max-width: 1200px;
+  text-align: unset;
+}
+.hero-block__section.height--1.alignment--left .hero-block__image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(25, 22, 28, 0.72) 0%, rgba(25, 22, 28, 0.58) 22%, rgba(25, 22, 28, 0.28) 48%, rgba(25, 22, 28, 0.08) 68%, rgba(25, 22, 28, 0) 100%);
+}
+.hero-block__section.height--1.alignment--left .hero-block__logo {
+  display: none;
+}
+.hero-block__section.height--1.alignment--left .hero-block__heading {
+  max-width: 640px;
+}
+.hero-block__section.height--1.alignment--left .hero-block__description {
+  max-width: 480px;
+  margin: 32px 0 0;
+}
+.hero-block__section.height--1.alignment--left .hero-block__button {
+  margin: 40px 0 0;
+}
+
 @supports (animation-timeline: scroll()) {
   .hero-block__image {
     animation-name: heroParallaxImage;
@@ -1506,7 +1542,7 @@ html.active .site-overlay {
   }
 }
 .locations-block__wrapper {
-  background-color: #ffffff;
+  background-color: #f5f0e8;
   color: #222222;
 }
 .locations-block__heading {
@@ -1570,6 +1606,7 @@ html.active .site-overlay {
   border-radius: 4px;
   overflow: hidden;
   color: #222222;
+  background-color: #ffffff;
 }
 @media (min-width: 768px) {
   .location-cards__card {
@@ -1883,8 +1920,8 @@ html.active .site-overlay {
   mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_FlowerShape.png");
 }
 .three-column-block__column:nth-child(2) .three-column-block__image {
-  -webkit-mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_BurstShape.png");
-  mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_BurstShape.png");
+  -webkit-mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_MountainShape.png");
+  mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_MountainShape.png");
 }
 .three-column-block__column:nth-child(3) .three-column-block__image {
   -webkit-mask-image: url("https://thestayonmarion.com/wp-content/uploads/2026/05/TheStay_AsteriskShape.png");
