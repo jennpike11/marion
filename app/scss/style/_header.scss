@@ -1,18 +1,17 @@
 @use '../base/globals' as *;
 
 .site-header__wrapper {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
+  width: 100%;
 
   @include respond-up(large) {
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 20px 4%;
+    padding: 20px 8%;
     background-color: transparent;
     transition: padding .3s ease-in-out, background-color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
@@ -30,20 +29,25 @@
 }
 
 .site-header__wrapper.scrolled {
+  height: 80px;
+  background-color: $warm-white;
+  box-shadow: 0 8px 24px rgba($midnight-navy, .08);
+
   @include respond-up(large) {
+    height: unset;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: $warm-white;
-    box-shadow: 0 8px 24px rgba($midnight-navy, .08);
   }
 
   .site-header__logo {
-    img {
-      opacity: 0;
-    }
+    @include respond-up(large){
+      img {
+        opacity: 0;
+      }
 
-    &:after {
-      opacity: 1;
+      &:after {
+        opacity: 1;
+      }
     }
   }
 
@@ -92,16 +96,16 @@
 }
 
 .site-header__logo {
-  display: none;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 9;
+  width: 220px;
 
   @include respond-up(large) {
-    display: block;
-    position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(150px, 14vw, 220px);
     transform: translate(-50%, -50%);
-    z-index: 2;
   }
 
   &:after {
@@ -123,12 +127,8 @@
 }
 
 .main-navigation {
-  padding: 120px 0 48px;
+  padding: 140px 0 48px;
   margin: 0;
-
-  @include respond-up(small) {
-    padding: 140px 0 48px;
-  }
 
   @include respond-up(large) {
     padding: 0;
@@ -183,11 +183,12 @@
     @include respond-up(large) {
       color: inherit;
       text-decoration: underline;
+      text-underline-offset: 4px;
       background-color: transparent;
     }
   }
 
-  li.menu-item-has-children {
+  li.menu-item-has-children { 
     background-color: rgba($white, .04);
 
     @include respond-up(large) {
@@ -334,8 +335,8 @@ html.active .site-overlay {
 
 .menu-toggle {
   position: fixed;
-  top: 8px;
-  right: 8px;
+  top: 20px;
+  right: 20px;
   z-index: 999;
   border: 0;
   font-size: 0;
@@ -354,7 +355,7 @@ html.active .site-overlay {
     content: '\f0c9';
     font-family: fontawesome;
     font-size: 32px;
-    color: $ochre;
+    color: $coral-pink;
 
     @include respond-up(small) {
       font-size: 40px;

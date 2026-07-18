@@ -49,13 +49,13 @@
 			</nav><!-- #site-navigation -->
 		</div>	
 		<a class="site-header__logo" href="/">
-				<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+			<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
 				$logo = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 				if ( $logo ) : ?>
 					<img src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-				<?php endif; ?>
+			<?php endif; ?>
 		</a>
-		<button class="primary-button button-color--turquoise">View Rooms</button>
+		<a class="primary-button button-color--turquoise" href="/rooms">View Rooms</a>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prc-theme' ); ?></button>
 	</header><!-- #masthead -->
 	<div class="site-overlay"></div>
