@@ -181,9 +181,7 @@
     background-color: $peach-glow;
 
     @include respond-up(large) {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+      color: $coral-pink;
       background-color: transparent;
     }
   }

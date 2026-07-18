@@ -72,7 +72,7 @@ p {
 a, a:hover {
   text-decoration: none;
   color: inherit;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 li {
@@ -210,20 +210,7 @@ img {
   font-family: fontawesome;
 }
 
-.legal-pages {
-  margin: 120px 0 64px;
-
-  .entry-title {
-    max-width: 640px;
-    margin: 0 auto 32px;
-    text-align: center;
-    font-size: 28px;
-    line-height: 36px;
-    font-family: $font-secondary;
-  }
-
-  a, a:hover {
-    color: $midnight-navy;
-    text-decoration: underline;
-  }
-}  
+.google-reviews:after {
+    content: '\f1a0';
+    font-family: fontawesome;
+}
