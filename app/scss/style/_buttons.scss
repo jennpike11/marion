@@ -16,7 +16,7 @@
   line-height: 1.1;
   font-weight: bold;
   text-align: center;
-  background-color: $turquoise;
+  background-color: $turquoise;  
   cursor: pointer !important;
   transition: background-color 0.4s ease-in-out;
 
@@ -24,6 +24,7 @@
   &:active,
   &:focus-visible {
     color: $white;
+    font-weight: bold;
     background-color: tint($turquoise, 20%);
   }
 }
@@ -139,13 +140,13 @@
 }
 
 .primary-button.button-color--slate-blue {
-    background-color: $slate-blue;
+    background-color: $midnight-navy;
 
     &:hover,
     &:active,
     &:focus-visible {
     color: $white;
-    background-color: tint($slate-blue, 20%);
+    background-color: tint($midnight-navy, 20%);
     }
 }
 

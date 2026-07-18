@@ -108,7 +108,7 @@
   width: 100%;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  background-color: #4a6584;
+  background-color: #2b2b3c;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media (min-width: 768px) {
@@ -163,6 +163,7 @@
 .search-submit:active,
 .search-submit:focus-visible {
   color: #ffffff;
+  font-weight: bold;
   background-color: rgb(112.6, 201.4, 224.6);
 }
 
@@ -247,11 +248,11 @@
 }
 
 .primary-button.button-color--slate-blue {
-  background-color: #4a6584;
+  background-color: #2b2b3c;
 }
 .primary-button.button-color--slate-blue:hover, .primary-button.button-color--slate-blue:active, .primary-button.button-color--slate-blue:focus-visible {
   color: #ffffff;
-  background-color: rgb(110.2, 131.8, 156.6);
+  background-color: rgb(85.4, 85.4, 99);
 }
 
 .primary-button.button-color--turquoise {
@@ -568,7 +569,7 @@ img {
   background-color: rgb(223.68, 226.56, 211.8);
 }
 .background-color--slate-blue {
-  background-color: rgb(189.84, 199.56, 210.72);
+  background-color: rgb(178.68, 178.68, 184.8);
 }
 .background-color--turquoise {
   background-color: rgb(205.16, 236.24, 244.36);
@@ -614,7 +615,7 @@ img {
   color: #A8B087;
 }
 .color--slate-blue {
-  color: #4a6584;
+  color: #2b2b3c;
 }
 .color--turquoise {
   color: #4dbcd9;
