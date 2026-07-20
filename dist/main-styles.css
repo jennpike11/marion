@@ -1624,9 +1624,9 @@ html.active .site-overlay {
   z-index: 11;
 }
 .hero-block__heading {
-  max-width: 320px;
+  max-width: 500px;
   margin: auto;
-  font-size: clamp(3.4rem, 5vw, 5rem);
+  font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1.1;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   will-change: transform;
@@ -1668,6 +1668,7 @@ html.active .site-overlay {
 }
 .hero-block__section.height--1.alignment--left .hero-block__heading {
   max-width: 640px;
+  font-size: clamp(3rem, 5vw, 5rem);
 }
 .hero-block__section.height--1.alignment--left .hero-block__description {
   max-width: 480px;
@@ -2084,12 +2085,13 @@ html.active .site-overlay {
   display: grid;
   grid-template-rows: auto auto auto;
   justify-items: center;
-  padding: 80px 40px;
+  padding: 80px 20px;
 }
 @media (min-width: 768px) {
   .three-column-block__column {
     grid-template-rows: 120px 240px 1fr;
     row-gap: 24px;
+    padding: 80px 40px;
   }
 }
 @media (min-width: 1024px) {
@@ -2105,8 +2107,13 @@ html.active .site-overlay {
 .three-column-block__heading {
   align-self: start;
   margin: 0;
-  font-size: 2.4rem;
+  font-size: 2rem;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .three-column-block__heading {
+    font-size: 2.4rem;
+  }
 }
 .three-column-block__image {
   align-self: start;
@@ -2196,6 +2203,12 @@ html.active .site-overlay {
 }
 .two-column-block.column-layout--equal .column__heading {
   max-width: 560px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .two-column-block.column-layout--equal .column__heading {
+    text-align: unset;
+  }
 }
 .two-column-block.column-layout--equal .column__description {
   max-width: 500px;

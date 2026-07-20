@@ -22,6 +22,11 @@
 
         .column__heading {
             max-width: 560px;
+            text-align: center;
+
+            @include respond-up(small){
+               text-align: unset;
+            } 
         }
 
         .column__description {
